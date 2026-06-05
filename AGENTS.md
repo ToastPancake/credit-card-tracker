@@ -3,3 +3,9 @@
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
+
+# ActualBudget API Rules
+
+When rendering ActualBudget accounts, note that `acc.type` may be `undefined`. You must conditionally render it.
+**DO NOT** do this: \`${acc.name} (${acc.type})\`
+**DO** do this: `acc.type ? \`${acc.name} (${acc.type})\` : acc.name`

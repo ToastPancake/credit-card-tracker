@@ -1,0 +1,92 @@
+[
+  {
+    "id": "template_capone_savor",
+    "name": "Capital One Savor",
+    "issuer": "Capital One",
+    "color": "#991b1b",
+    "categories": [
+      { "categoryName": "Dining", "multiplier": 3 },
+      { "categoryName": "Groceries", "multiplier": 3 },
+      { "categoryName": "Entertainment", "multiplier": 3 },
+      { "categoryName": "Streaming", "multiplier": 3 },
+      { "categoryName": "Everything", "multiplier": 1 }
+    ]
+  },
+  {
+    "id": "template_wf_active_cash",
+    "name": "Wells Fargo Active Cash",
+    "issuer": "Wells Fargo",
+    "color": "#b91c1c",
+    "categories": [
+      { "categoryName": "Everything", "multiplier": 2 }
+    ]
+  },
+  {
+    "id": "template_citi_custom_cash",
+    "name": "Citi Custom Cash",
+    "issuer": "Citi",
+    "color": "#1d4ed8",
+    "categories": [
+      { "categoryName": "Top Category", "multiplier": 5 },
+      { "categoryName": "Everything", "multiplier": 1 }
+    ]
+  },
+  {
+    "id": "template_discover_it",
+    "name": "Discover IT",
+    "issuer": "Discover",
+    "color": "#ea580c",
+    "categories": [
+      { "categoryName": "Quarterly Rotating", "multiplier": 5 },
+      { "categoryName": "Everything", "multiplier": 1 }
+    ]
+  },
+  {
+    "id": "template_chase_sapphire_reserve",
+    "name": "Chase Sapphire Reserve",
+    "issuer": "Chase",
+    "color": "#1e3a8a",
+    "categories": [
+      { "categoryName": "Travel", "multiplier": 3 },
+      { "categoryName": "Dining", "multiplier": 3 },
+      { "categoryName": "Everything", "multiplier": 1 }
+    ]
+  },
+  {
+    "id": "template_chase_sapphire_preferred",
+    "name": "Chase Sapphire Preferred",
+    "issuer": "Chase",
+    "color": "#2563eb",
+    "categories": [
+      { "categoryName": "Dining", "multiplier": 3 },
+      { "categoryName": "Online Groceries", "multiplier": 3 },
+      { "categoryName": "Streaming", "multiplier": 3 },
+      { "categoryName": "Travel", "multiplier": 2 },
+      { "categoryName": "Everything", "multiplier": 1 }
+    ]
+  },
+  {
+    "id": "template_chase_freedom_unlimited",
+    "name": "Chase Freedom Unlimited",
+    "issuer": "Chase",
+    "color": "#3b82f6",
+    "categories": [
+      { "categoryName": "Travel (Portal)", "multiplier": 5 },
+      { "categoryName": "Dining", "multiplier": 3 },
+      { "categoryName": "Drugstores", "multiplier": 3 },
+      { "categoryName": "Everything", "multiplier": 1.5 }
+    ]
+  },
+  {
+    "id": "template_amex_gold",
+    "name": "Amex Gold",
+    "issuer": "American Express",
+    "color": "#eab308",
+    "categories": [
+      { "categoryName": "Dining", "multiplier": 4 },
+      { "categoryName": "Groceries", "multiplier": 4 },
+      { "categoryName": "Flights", "multiplier": 3 },
+      { "categoryName": "Everything", "multiplier": 1 }
+    ]
+  }
+]
