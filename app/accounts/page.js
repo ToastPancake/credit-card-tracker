@@ -30,7 +30,7 @@ export default function AccountsPage() {
   
   const [formData, setFormData] = useState({
     name: '', issuer: '', actualAccountId: '', productUrl: '',
-    color: '#4a61bd', categories: [], introBonuses: [],
+    color: '#4a61bd', categories: [], introBonuses: [], credits: [],
     quarterlyCategories: { Q1: [], Q2: [], Q3: [], Q4: [] }
   });
 
@@ -67,27 +67,22 @@ export default function AccountsPage() {
         color: template.color,
         productUrl: template.productUrl || '',
         quarterlyCategories: template.quarterlyCategories || { Q1: [], Q2: [], Q3: [], Q4: [] },
-        categories: [...template.categories]
+        categories: [...template.categories],
+        credits: template.credits ? [...template.credits] : []
       }));
     }
   };
 
   const addCategory = () => {
-    setFormData(prev => ({
-      ...prev,
-      categories: [...prev.categories, { categoryName: '', multiplier: 1 }]
-    }));
+    setFormData(prev => ({ ...prev, categories: [...prev.categories, { categoryName: '', multiplier: 1 }] }));
   };
-
   const updateCategory = (index, field, value) => {
     const newCats = [...formData.categories];
     newCats[index][field] = value;
     setFormData(prev => ({ ...prev, categories: newCats }));
   };
-
   const removeCategory = (index) => {
-    const newCats = formData.categories.filter((_, i) => i !== index);
-    setFormData(prev => ({ ...prev, categories: newCats }));
+    setFormData(prev => ({ ...prev, categories: prev.categories.filter((_, i) => i !== index) }));
   };
 
   const addIntroBonus = () => {
@@ -96,23 +91,32 @@ export default function AccountsPage() {
       introBonuses: [...prev.introBonuses, { type: 'SpendReward', description: '', deadline: '', spendRequirement: 0, subRewardAmount: '', subRewardType: 'Points', modifierValue: '', categoryId: '' }]
     }));
   };
-
   const updateIntroBonus = (index, field, value) => {
     const newBonuses = [...formData.introBonuses];
     newBonuses[index][field] = value;
     setFormData(prev => ({ ...prev, introBonuses: newBonuses }));
   };
-
   const removeIntroBonus = (index) => {
-    const newBonuses = formData.introBonuses.filter((_, i) => i !== index);
-    setFormData(prev => ({ ...prev, introBonuses: newBonuses }));
+    setFormData(prev => ({ ...prev, introBonuses: prev.introBonuses.filter((_, i) => i !== index) }));
+  };
+
+  const addCredit = () => {
+    setFormData(prev => ({
+      ...prev,
+      credits: [...prev.credits, { name: '', amount: 0, allowPartial: false, frequency: 'Annual', resetType: 'Calendar', resetAnchorDate: '' }]
+    }));
+  };
+  const updateCredit = (index, field, value) => {
+    const newCredits = [...formData.credits];
+    newCredits[index][field] = value;
+    setFormData(prev => ({ ...prev, credits: newCredits }));
+  };
+  const removeCredit = (index) => {
+    setFormData(prev => ({ ...prev, credits: prev.credits.filter((_, i) => i !== index) }));
   };
 
   const updateQuarterly = (q, val) => {
-    setFormData(prev => ({
-      ...prev,
-      quarterlyCategories: { ...prev.quarterlyCategories, [q]: val }
-    }));
+    setFormData(prev => ({ ...prev, quarterlyCategories: { ...prev.quarterlyCategories, [q]: val } }));
   };
 
   const handleEdit = (card) => {
@@ -122,6 +126,7 @@ export default function AccountsPage() {
       name: card.name || '', issuer: card.issuer || '', actualAccountId: card.actualAccountId || '', productUrl: card.productUrl || '',
       color: card.color || '#4a61bd', categories: card.categories || [],
       quarterlyCategories: card.quarterlyCategories || { Q1: [], Q2: [], Q3: [], Q4: [] },
+      credits: card.credits || [],
       introBonuses: card.introBonuses ? card.introBonuses.map(ib => {
          let subRewardAmount = '';
          let subRewardType = 'Points';
@@ -135,11 +140,7 @@ export default function AccountsPage() {
              subRewardAmount = ib.rewardAmount.replace(/points/i, '').trim();
            }
          }
-         return {
-           ...ib,
-           subRewardAmount,
-           subRewardType
-         };
+         return { ...ib, subRewardAmount, subRewardType };
       }) : []
     });
     setShowForm(true);
@@ -155,7 +156,7 @@ export default function AccountsPage() {
   const cancelEdit = () => {
     setEditingId(null);
     setShowForm(false);
-    setFormData({ name: '', issuer: '', actualAccountId: '', productUrl: '', color: '#4a61bd', categories: [], introBonuses: [], quarterlyCategories: { Q1: [], Q2: [], Q3: [], Q4: [] } });
+    setFormData({ name: '', issuer: '', actualAccountId: '', productUrl: '', color: '#4a61bd', categories: [], introBonuses: [], credits: [], quarterlyCategories: { Q1: [], Q2: [], Q3: [], Q4: [] } });
   };
 
   const handleAddSubmit = async (e) => {
@@ -174,7 +175,12 @@ export default function AccountsPage() {
         delete payload.subRewardAmount;
         delete payload.subRewardType;
         return payload;
-      })
+      }),
+      credits: formData.credits.map(c => ({
+        ...c,
+        amount: parseFloat(c.amount) || 0,
+        resetAnchorDate: c.resetType === 'Calendar' ? '' : c.resetAnchorDate
+      }))
     };
     
     const res = await fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(submitData) });
@@ -297,6 +303,61 @@ export default function AccountsPage() {
               </div>
             </div>
           )}
+
+          <div style={{ marginTop: '8px', background: 'rgba(0,0,0,0.2)', padding: '16px', borderRadius: '8px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+              <h4 style={{ color: 'var(--text-main)', margin: 0 }}>Coupons / Credits</h4>
+              <button type="button" onClick={addCredit} style={{ background: 'transparent', border: '1px solid var(--primary)', color: 'var(--primary)', padding: '4px 8px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.875rem' }}>+ Add Credit</button>
+            </div>
+            {formData.credits.length === 0 && <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', margin: 0 }}>No credits defined.</p>}
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {formData.credits.map((credit, idx) => (
+                <div key={idx} style={{ background: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '6px' }}>
+                  <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', alignItems: 'center' }}>
+                    <div style={{ flex: 1 }}>
+                      <input className="input-glass" style={{ padding: '6px 10px', fontSize: '0.875rem' }} value={credit.name} onChange={e => updateCredit(idx, 'name', e.target.value)} placeholder="Credit Name (e.g. Uber Cash)" required />
+                    </div>
+                    <div style={{ width: '120px' }}>
+                      <input className="input-glass" type="number" step="0.01" style={{ padding: '6px 10px', fontSize: '0.875rem' }} value={credit.amount} onChange={e => updateCredit(idx, 'amount', e.target.value)} placeholder="Value ($)" required />
+                    </div>
+                    <button type="button" onClick={() => removeCredit(idx)} style={{ background: 'transparent', border: 'none', color: '#ef4444', cursor: 'pointer', fontSize: '1.25rem', padding: '0 8px' }}>&times;</button>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.75rem', marginBottom: '4px', color: 'var(--text-muted)' }}>Frequency</label>
+                      <Dropdown options={['Monthly', 'Quarterly', 'Semi-Annual', 'Annual', 'Every 4 Years']} value={credit.frequency} onChange={val => updateCredit(idx, 'frequency', val)} />
+                    </div>
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.75rem', marginBottom: '4px', color: 'var(--text-muted)' }}>Reset Behavior</label>
+                      <Dropdown options={[{label: 'Calendar (Standard)', value: 'Calendar'}, {label: 'Anniversary / Custom', value: 'Custom'}]} value={credit.resetType} onChange={val => updateCredit(idx, 'resetType', val)} />
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginTop: '12px' }}>
+                    {credit.resetType === 'Custom' && (
+                      <div>
+                        <label style={{ display: 'block', fontSize: '0.75rem', marginBottom: '4px', color: 'var(--text-muted)' }}>Reset Date (MM-DD)</label>
+                        <input className="input-glass" style={{ padding: '6px 10px', fontSize: '0.875rem', width: '120px' }} value={credit.resetAnchorDate || ''} onChange={e => updateCredit(idx, 'resetAnchorDate', e.target.value)} placeholder="e.g. 08-01" required />
+                      </div>
+                    )}
+                    
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: credit.resetType === 'Custom' ? '18px' : '0' }}>
+                      <input 
+                        type="checkbox" 
+                        id={`partial-${idx}`}
+                        checked={credit.allowPartial} 
+                        onChange={e => updateCredit(idx, 'allowPartial', e.target.checked)} 
+                        style={{ width: '16px', height: '16px' }}
+                      />
+                      <label htmlFor={`partial-${idx}`} style={{ fontSize: '0.875rem', color: 'var(--text-muted)', cursor: 'pointer' }}>Allow Partial Usage</label>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
 
           <div style={{ marginTop: '8px', background: 'rgba(0,0,0,0.2)', padding: '16px', borderRadius: '8px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>

@@ -1,92 +1,1581 @@
 [
   {
+    "id": "amex_everyday_preferred",
+    "name": "Amex EveryDay Preferred",
+    "color": "#9ca3af",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "American Express",
+    "categories": [
+      {
+        "multiplier": 3,
+        "categoryName": "Groceries"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Gas"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
+    "id": "amex_gold",
+    "name": "Amex Gold Card",
+    "color": "#eab308",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "American Express",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Prepaid Hotels (Portal)"
+      },
+      {
+        "multiplier": 4,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 4,
+        "categoryName": "Groceries"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Flights (Direct or Portal)"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Prepaid Car Rentals (Portal)"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "a9c31c82-4267-44f8-ad56-04843bc8d5ba",
+        "templateId": "amex_gold",
+        "name": "Dining Credit",
+        "amount": 120,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "3b2c4be9-c406-4317-ba9e-894aab3a3e9e",
+        "templateId": "amex_gold",
+        "name": "Uber Cash",
+        "amount": 120,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "82a86849-509a-4959-a8fa-86e1069b7571",
+        "templateId": "amex_gold",
+        "name": "Resy Credit",
+        "amount": 100,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "14756610-047d-4352-8684-9c2bfaafcdfb",
+        "templateId": "amex_gold",
+        "name": "Dunkin' Credit",
+        "amount": 84,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      }
+    ]
+  },
+  {
+    "id": "amex_green",
+    "name": "Amex Green Card",
+    "color": "#22c55e",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "American Express",
+    "categories": [
+      {
+        "multiplier": 3,
+        "categoryName": "Travel"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Transit"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "81fcf8e1-c3fd-4f69-b03a-80dac403ba34",
+        "templateId": "amex_green",
+        "name": "Clear Plus",
+        "amount": 209,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Custom",
+        "resetAnchorDate": ""
+      },
+      {
+        "id": "fc3445a3-1786-4304-b2e7-f822b96bc914",
+        "templateId": "amex_green",
+        "name": "LoungeBuddy",
+        "amount": 100,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      }
+    ]
+  },
+  {
+    "id": "amex_platinum",
+    "name": "Amex Platinum",
+    "color": "#94a3b8",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "American Express",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Flights (Direct or Portal)"
+      },
+      {
+        "multiplier": 5,
+        "categoryName": "Prepaid Hotels (Portal)"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "6957a5eb-66d2-4e33-8758-fb4ded69611d",
+        "templateId": "amex_platinum",
+        "name": "Hotel Credit",
+        "amount": 600,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "9c8a0c87-35ae-4cdc-8852-ac0dc39cac72",
+        "templateId": "amex_platinum",
+        "name": "Resy Dining Credit",
+        "amount": 400,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "4f61a3fd-1785-4a48-8b4c-8fed5887f68f",
+        "templateId": "amex_platinum",
+        "name": "Uber Cash & Uber One",
+        "amount": 320,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "a3fe6c89-1a43-4692-8fb9-e859db81383c",
+        "templateId": "amex_platinum",
+        "name": "Digital Entertainment",
+        "amount": 300,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "13b072f0-9b7d-4446-ac87-efa60e38402c",
+        "templateId": "amex_platinum",
+        "name": "Lululemon Credit",
+        "amount": 300,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "3b240c88-5cf0-4da3-9516-6b6e60c02bd6",
+        "templateId": "amex_platinum",
+        "name": "Equinox Credit",
+        "amount": 300,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "e50b8ef0-db81-4a57-82dd-324e7d671e02",
+        "templateId": "amex_platinum",
+        "name": "Clear Plus",
+        "amount": 209,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Custom",
+        "resetAnchorDate": ""
+      },
+      {
+        "id": "18f119e4-c395-4de7-8b53-433170488a14",
+        "templateId": "amex_platinum",
+        "name": "Airline Fee Credit",
+        "amount": 200,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "98b235a6-3693-47e1-a00d-1abc59f201c3",
+        "templateId": "amex_platinum",
+        "name": "Oura Ring Credit",
+        "amount": 200,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "4ba3ad63-57ed-44cc-ab96-51547f7fb78a",
+        "templateId": "amex_platinum",
+        "name": "Walmart+ Credit",
+        "amount": 155,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      }
+    ]
+  },
+  {
+    "id": "amex_bce",
+    "name": "Blue Cash Everyday",
+    "color": "#3b82f6",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "American Express",
+    "categories": [
+      {
+        "multiplier": 3,
+        "categoryName": "Groceries"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Online Shopping"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Gas"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "1fdf68e6-c6a2-4ce4-875a-4828241817f7",
+        "templateId": "amex_bce",
+        "name": "Home Chef",
+        "amount": 180,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "c5e88aff-42c0-495c-9d50-7aafcfc2ea24",
+        "templateId": "amex_bce",
+        "name": "Disney Bundle Credit",
+        "amount": 84,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      }
+    ]
+  },
+  {
+    "id": "amex_bcp",
+    "name": "Blue Cash Preferred",
+    "color": "#1e3a8a",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "American Express",
+    "categories": [
+      {
+        "multiplier": 6,
+        "categoryName": "Groceries"
+      },
+      {
+        "multiplier": 6,
+        "categoryName": "Streaming"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Transit"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Gas"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "6712aeae-d60a-4650-9b08-9cd17ce9e54c",
+        "templateId": "amex_bcp",
+        "name": "Disney Bundle Credit",
+        "amount": 120,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      }
+    ]
+  },
+  {
+    "id": "template_capone_quicksilver",
+    "name": "Capital One Quicksilver",
+    "color": "#e2e8f0",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Capital One",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Hotels/Rental Cars (Portal)"
+      },
+      {
+        "multiplier": 1.5,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
     "id": "template_capone_savor",
     "name": "Capital One Savor",
+    "color": "#d97706",
+    "productUrl": null,
+    "quarterlyCategories": null,
     "issuer": "Capital One",
-    "color": "#991b1b",
     "categories": [
-      { "categoryName": "Dining", "multiplier": 3 },
-      { "categoryName": "Groceries", "multiplier": 3 },
-      { "categoryName": "Entertainment", "multiplier": 3 },
-      { "categoryName": "Streaming", "multiplier": 3 },
-      { "categoryName": "Everything", "multiplier": 1 }
-    ]
+      {
+        "multiplier": 8,
+        "categoryName": "Entertainment (Portal)"
+      },
+      {
+        "multiplier": 5,
+        "categoryName": "Hotels/Rental Cars (Portal)"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Entertainment"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Popular Streaming"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Grocery Stores"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
   },
   {
-    "id": "template_wf_active_cash",
-    "name": "Wells Fargo Active Cash",
-    "issuer": "Wells Fargo",
-    "color": "#b91c1c",
-    "categories": [
-      { "categoryName": "Everything", "multiplier": 2 }
-    ]
-  },
-  {
-    "id": "template_citi_custom_cash",
-    "name": "Citi Custom Cash",
-    "issuer": "Citi",
-    "color": "#1d4ed8",
-    "categories": [
-      { "categoryName": "Top Category", "multiplier": 5 },
-      { "categoryName": "Everything", "multiplier": 1 }
-    ]
-  },
-  {
-    "id": "template_discover_it",
-    "name": "Discover IT",
-    "issuer": "Discover",
+    "id": "template_capone_savor_one",
+    "name": "Capital One SavorOne",
     "color": "#ea580c",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Capital One",
     "categories": [
-      { "categoryName": "Quarterly Rotating", "multiplier": 5 },
-      { "categoryName": "Everything", "multiplier": 1 }
+      {
+        "multiplier": 8,
+        "categoryName": "Entertainment (Portal)"
+      },
+      {
+        "multiplier": 5,
+        "categoryName": "Hotels/Rental Cars (Portal)"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Entertainment"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Popular Streaming"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Grocery Stores"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
+    "id": "template_capone_venture",
+    "name": "Capital One Venture",
+    "color": "#94a3b8",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Capital One",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Hotels/Rental Cars (Portal)"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "53d1c7ca-835a-43f3-aabe-9d6c3043d4bd",
+        "templateId": "template_capone_venture",
+        "name": "Global Entry/TSA PreCheck",
+        "amount": 120,
+        "allowPartial": false,
+        "frequency": "Every 4 Years",
+        "resetType": "Custom",
+        "resetAnchorDate": ""
+      }
+    ]
+  },
+  {
+    "id": "template_capone_venture_x",
+    "name": "Capital One Venture X",
+    "color": "#1e293b",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Capital One",
+    "categories": [
+      {
+        "multiplier": 10,
+        "categoryName": "Hotels/Rental Cars (Portal)"
+      },
+      {
+        "multiplier": 5,
+        "categoryName": "Flights/Vacation Rentals (Portal)"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "e58a90c8-b03a-47bd-b3d5-c79789e0b43e",
+        "templateId": "template_capone_venture_x",
+        "name": "Travel Credit",
+        "amount": 300,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "9931d731-ba7f-4e31-a19f-fccbe5ebf865",
+        "templateId": "template_capone_venture_x",
+        "name": "Global Entry/TSA PreCheck",
+        "amount": 120,
+        "allowPartial": false,
+        "frequency": "Every 4 Years",
+        "resetType": "Custom",
+        "resetAnchorDate": ""
+      },
+      {
+        "id": "eb5d988c-cb65-42af-8ede-154cb17b31ce",
+        "templateId": "template_capone_venture_x",
+        "name": "Anniversary Bonus",
+        "amount": 100,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Custom",
+        "resetAnchorDate": ""
+      }
+    ]
+  },
+  {
+    "id": "template_capone_venture_x_business",
+    "name": "Capital One Venture X Business",
+    "color": "#0f172a",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Capital One",
+    "categories": [
+      {
+        "multiplier": 10,
+        "categoryName": "Hotels/Rental Cars (Portal)"
+      },
+      {
+        "multiplier": 5,
+        "categoryName": "Flights/Vacation Rentals (Portal)"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "f9ea1c2c-ca2b-4c86-9ade-008955aba67b",
+        "templateId": "template_capone_venture_x_business",
+        "name": "Travel Credit",
+        "amount": 300,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "78f6ceb7-a877-46a4-b046-d6d5baf0df84",
+        "templateId": "template_capone_venture_x_business",
+        "name": "Anniversary Bonus",
+        "amount": 100,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Custom",
+        "resetAnchorDate": ""
+      }
+    ]
+  },
+  {
+    "id": "template_capone_venture_one",
+    "name": "Capital One VentureOne",
+    "color": "#cbd5e1",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Capital One",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Hotels/Rental Cars (Portal)"
+      },
+      {
+        "multiplier": 1.25,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
+    "id": "chase_freedom_flex",
+    "name": "Chase Freedom Flex",
+    "color": "#2563eb",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Chase",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Rotating Quarterly Categories"
+      },
+      {
+        "multiplier": 5,
+        "categoryName": "Travel (Chase Travel)"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Drugstores"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
+    "id": "template_chase_freedom_unlimited",
+    "name": "Chase Freedom Unlimited",
+    "color": "#3b82f6",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Chase",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Travel (Portal)"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Drugstores"
+      },
+      {
+        "multiplier": 1.5,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
+    "id": "chase_freedom_unlimited",
+    "name": "Chase Freedom Unlimited",
+    "color": "#60a5fa",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Chase",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Travel (Chase Travel)"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Drugstores"
+      },
+      {
+        "multiplier": 1.5,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
+    "id": "chase_ink_business_cash",
+    "name": "Chase Ink Business Cash",
+    "color": "#3b82f6",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Chase",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Lyft"
+      },
+      {
+        "multiplier": 5,
+        "categoryName": "Office Supply Stores"
+      },
+      {
+        "multiplier": 5,
+        "categoryName": "Internet, Cable & Phone"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Gas Stations"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
+    "id": "chase_ink_business_preferred",
+    "name": "Chase Ink Business Preferred",
+    "color": "#1e3a8a",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Chase",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Lyft"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Travel"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Shipping"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Internet, Cable & Phone"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Search/Social Media Advertising"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
+    "id": "chase_ink_business_unlimited",
+    "name": "Chase Ink Business Unlimited",
+    "color": "#e5e7eb",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Chase",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Lyft"
+      },
+      {
+        "multiplier": 1.5,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
+    "id": "template_chase_sapphire_preferred",
+    "name": "Chase Sapphire Preferred",
+    "color": "#2563eb",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Chase",
+    "categories": [
+      {
+        "multiplier": 3,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Online Groceries"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Streaming"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Travel"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
+    "id": "chase_sapphire_preferred",
+    "name": "Chase Sapphire Preferred",
+    "color": "#1d4ed8",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Chase",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Travel (Chase Travel)"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Online Groceries"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Select Streaming Services"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Travel"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "3f147637-4ac5-4fc5-9162-7d71a6469846",
+        "templateId": "chase_sapphire_preferred",
+        "name": "Chase Travel Hotel Credit",
+        "amount": 50,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      }
     ]
   },
   {
     "id": "template_chase_sapphire_reserve",
     "name": "Chase Sapphire Reserve",
-    "issuer": "Chase",
     "color": "#1e3a8a",
-    "categories": [
-      { "categoryName": "Travel", "multiplier": 3 },
-      { "categoryName": "Dining", "multiplier": 3 },
-      { "categoryName": "Everything", "multiplier": 1 }
-    ]
-  },
-  {
-    "id": "template_chase_sapphire_preferred",
-    "name": "Chase Sapphire Preferred",
+    "productUrl": null,
+    "quarterlyCategories": null,
     "issuer": "Chase",
-    "color": "#2563eb",
     "categories": [
-      { "categoryName": "Dining", "multiplier": 3 },
-      { "categoryName": "Online Groceries", "multiplier": 3 },
-      { "categoryName": "Streaming", "multiplier": 3 },
-      { "categoryName": "Travel", "multiplier": 2 },
-      { "categoryName": "Everything", "multiplier": 1 }
-    ]
+      {
+        "multiplier": 3,
+        "categoryName": "Travel"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
   },
   {
-    "id": "template_chase_freedom_unlimited",
-    "name": "Chase Freedom Unlimited",
+    "id": "chase_sapphire_reserve",
+    "name": "Chase Sapphire Reserve",
+    "color": "#0a1930",
+    "productUrl": null,
+    "quarterlyCategories": null,
     "issuer": "Chase",
-    "color": "#3b82f6",
     "categories": [
-      { "categoryName": "Travel (Portal)", "multiplier": 5 },
-      { "categoryName": "Dining", "multiplier": 3 },
-      { "categoryName": "Drugstores", "multiplier": 3 },
-      { "categoryName": "Everything", "multiplier": 1.5 }
+      {
+        "multiplier": 10,
+        "categoryName": "Hotels & Car Rentals (Chase Travel)"
+      },
+      {
+        "multiplier": 5,
+        "categoryName": "Flights (Chase Travel)"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Travel"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "0a5617d9-2499-4d44-b1a3-b9246c6e3f45",
+        "templateId": "chase_sapphire_reserve",
+        "name": "Annual Travel Credit",
+        "amount": 300,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "c58d0acc-0305-43d1-ab64-806b428416a5",
+        "templateId": "chase_sapphire_reserve",
+        "name": "The Edit℠ Hotel Credit",
+        "amount": 500,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "a97415aa-3b85-4bbe-849e-43145ffc9631",
+        "templateId": "chase_sapphire_reserve",
+        "name": "Select Hotel Credit",
+        "amount": 250,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "e73185d5-580a-4f86-95a4-52faa3de4c35",
+        "templateId": "chase_sapphire_reserve",
+        "name": "Global Entry / TSA PreCheck / NEXUS",
+        "amount": 120,
+        "allowPartial": false,
+        "frequency": "Every 4 Years",
+        "resetType": "Custom",
+        "resetAnchorDate": ""
+      }
     ]
   },
   {
-    "id": "template_amex_gold",
-    "name": "Amex Gold",
+    "id": "template_citi_aadvantage_executive",
+    "name": "Citi AAdvantage Executive",
+    "color": "#111827",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Citi",
+    "categories": [
+      {
+        "multiplier": 10,
+        "categoryName": "AAdvantage Hotels & Cars"
+      },
+      {
+        "multiplier": 4,
+        "categoryName": "American Airlines"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "fe631d78-5e4e-42c1-983c-c00f91a3e2aa",
+        "templateId": "template_citi_aadvantage_executive",
+        "name": "Grubhub",
+        "amount": 120,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "a67c05db-0276-44f1-bc28-753f686222d5",
+        "templateId": "template_citi_aadvantage_executive",
+        "name": "Lyft",
+        "amount": 120,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "6fbc63a8-a9af-4ebb-807e-35479a727bd1",
+        "templateId": "template_citi_aadvantage_executive",
+        "name": "Avis / Budget Car Rentals",
+        "amount": 120,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "b9808856-db6f-4e07-8bd6-6f5be72de61f",
+        "templateId": "template_citi_aadvantage_executive",
+        "name": "Global Entry / TSA PreCheck",
+        "amount": 120,
+        "allowPartial": false,
+        "frequency": "Every 4 Years",
+        "resetType": "Custom",
+        "resetAnchorDate": ""
+      }
+    ]
+  },
+  {
+    "id": "template_citi_aadvantage_platinum_select",
+    "name": "Citi AAdvantage Platinum Select",
+    "color": "#9ca3af",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Citi",
+    "categories": [
+      {
+        "multiplier": 2,
+        "categoryName": "American Airlines"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Restaurants"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Gas Stations"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
+    "id": "template_citi_custom_cash",
+    "name": "Citi Custom Cash",
+    "color": "#059669",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Citi",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Highest Eligible Category"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
+    "id": "template_citi_double_cash",
+    "name": "Citi Double Cash",
+    "color": "#0284c7",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Citi",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Citi Travel"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
+    "id": "template_citi_rewards_plus",
+    "name": "Citi Rewards+",
+    "color": "#1e3a8a",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Citi",
+    "categories": [
+      {
+        "multiplier": 2,
+        "categoryName": "Supermarkets & Gas Stations"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
+    "id": "template_citi_strata_premier",
+    "name": "Citi Strata Premier",
+    "color": "#0ea5e9",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Citi",
+    "categories": [
+      {
+        "multiplier": 10,
+        "categoryName": "Citi Travel"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Air Travel"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Hotels"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Restaurants"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Supermarkets"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Gas Stations / EV"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "710664d3-314a-4407-8bfb-a8b94c962519",
+        "templateId": "template_citi_strata_premier",
+        "name": "Annual Hotel Savings",
+        "amount": 100,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      }
+    ]
+  },
+  {
+    "id": "template_costco_anywhere_visa",
+    "name": "Costco Anywhere Visa",
+    "color": "#4b5563",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Citi",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Gas at Costco"
+      },
+      {
+        "multiplier": 4,
+        "categoryName": "Gas & EV Charging"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Restaurants & Travel"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Costco & Costco.com"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
+  },
+  {
+    "id": "template_discover_it",
+    "name": "Discover IT",
+    "color": "#ea580c",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Discover",
+    "categories": [
+      {
+        "multiplier": 5,
+        "categoryName": "Quarterly Rotating"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [
+      {
+        "id": "0.22750757766686436",
+        "templateId": "template_discover_it",
+        "type": "GlobalMultiplierMatch",
+        "description": null,
+        "deadline": null,
+        "spendRequirement": null,
+        "rewardAmount": null,
+        "modifierValue": 2,
+        "categoryId": null
+      }
+    ],
+    "credits": []
+  },
+  {
+    "id": "amex_hilton_aspire",
+    "name": "Hilton Honors Aspire",
+    "color": "#374151",
+    "productUrl": null,
+    "quarterlyCategories": null,
     "issuer": "American Express",
-    "color": "#eab308",
     "categories": [
-      { "categoryName": "Dining", "multiplier": 4 },
-      { "categoryName": "Groceries", "multiplier": 4 },
-      { "categoryName": "Flights", "multiplier": 3 },
-      { "categoryName": "Everything", "multiplier": 1 }
+      {
+        "multiplier": 14,
+        "categoryName": "Hilton"
+      },
+      {
+        "multiplier": 7,
+        "categoryName": "Flights (Direct or Portal)"
+      },
+      {
+        "multiplier": 7,
+        "categoryName": "Car Rentals (Direct)"
+      },
+      {
+        "multiplier": 7,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "9abd28e4-2d0f-48d6-a0a0-d1daba35de27",
+        "templateId": "amex_hilton_aspire",
+        "name": "Hilton Resort Credit",
+        "amount": 400,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "0e1d21b0-bc08-4cb6-8d85-356a19bcefc2",
+        "templateId": "amex_hilton_aspire",
+        "name": "Flight Credit",
+        "amount": 200,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "1207adef-2aac-49c1-9750-af44ac0f7b2d",
+        "templateId": "amex_hilton_aspire",
+        "name": "Clear Plus",
+        "amount": 209,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Custom",
+        "resetAnchorDate": ""
+      },
+      {
+        "id": "c852f505-2dab-4d5b-87dc-9b2a229c087f",
+        "templateId": "amex_hilton_aspire",
+        "name": "Waldorf/Conrad Property Credit",
+        "amount": 100,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      }
     ]
+  },
+  {
+    "id": "amex_hilton_surpass",
+    "name": "Hilton Honors Surpass",
+    "color": "#b45309",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "American Express",
+    "categories": [
+      {
+        "multiplier": 12,
+        "categoryName": "Hilton"
+      },
+      {
+        "multiplier": 6,
+        "categoryName": "Groceries"
+      },
+      {
+        "multiplier": 6,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 6,
+        "categoryName": "Gas"
+      },
+      {
+        "multiplier": 4,
+        "categoryName": "Online Shopping"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "3e084e60-16dc-4f3f-b59c-fec98d9671b2",
+        "templateId": "amex_hilton_surpass",
+        "name": "Hilton Credit",
+        "amount": 200,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      }
+    ]
+  },
+  {
+    "id": "marriott_bonvoy_boundless",
+    "name": "Marriott Bonvoy Boundless",
+    "color": "#171717",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Chase",
+    "categories": [
+      {
+        "multiplier": 6,
+        "categoryName": "Marriott Bonvoy Hotels"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Gas Stations"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Grocery Stores"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "a2e62510-ec56-44e9-9f71-dfccc79a8722",
+        "templateId": "marriott_bonvoy_boundless",
+        "name": "Free Night Award",
+        "amount": 0,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "1c6c6c1b-9105-49b6-a3fd-cfe3a588b8e9",
+        "templateId": "marriott_bonvoy_boundless",
+        "name": "Airline Statement Credit",
+        "amount": 100,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      }
+    ]
+  },
+  {
+    "id": "amex_marriott_brilliant",
+    "name": "Marriott Bonvoy Brilliant",
+    "color": "#111827",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "American Express",
+    "categories": [
+      {
+        "multiplier": 6,
+        "categoryName": "Marriott"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 3,
+        "categoryName": "Flights (Direct)"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "47b198c7-e250-49ed-a7b5-24f43ebc13cf",
+        "templateId": "amex_marriott_brilliant",
+        "name": "Dining Credit",
+        "amount": 300,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "767591b8-ae04-4a39-b0c5-13c987bd099d",
+        "templateId": "amex_marriott_brilliant",
+        "name": "Luxury Property Credit",
+        "amount": 100,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "d7823fb9-8f4c-4759-a4d7-172345569780",
+        "templateId": "amex_marriott_brilliant",
+        "name": "Global Entry / TSA PreCheck",
+        "amount": 120,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Custom",
+        "resetAnchorDate": ""
+      }
+    ]
+  },
+  {
+    "id": "united_explorer",
+    "name": "United Explorer Card",
+    "color": "#003366",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Chase",
+    "categories": [
+      {
+        "multiplier": 3,
+        "categoryName": "United Purchases"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Dining"
+      },
+      {
+        "multiplier": 2,
+        "categoryName": "Hotel Stays"
+      },
+      {
+        "multiplier": 1,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": [
+      {
+        "id": "48db28ac-be7a-4c4d-ad05-b27aa2ff3750",
+        "templateId": "united_explorer",
+        "name": "United Hotels Purchases",
+        "amount": 100,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "558e3052-37ad-44a3-a42f-8e0df486bd71",
+        "templateId": "united_explorer",
+        "name": "Rideshare Purchases",
+        "amount": 60,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "a8ea1a06-5f4d-47a3-a5fe-adea792d1f97",
+        "templateId": "united_explorer",
+        "name": "Avis/Budget Rental Car",
+        "amount": 50,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "b01d43b6-4749-4ff1-8193-05fe11618a55",
+        "templateId": "united_explorer",
+        "name": "JSX Flight Credits",
+        "amount": 100,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "48513a67-cfa7-4443-9167-bde3f3baf316",
+        "templateId": "united_explorer",
+        "name": "Instacart+ Credits",
+        "amount": 120,
+        "allowPartial": false,
+        "frequency": "Annual",
+        "resetType": "Calendar",
+        "resetAnchorDate": null
+      },
+      {
+        "id": "1b1f93a3-8601-4656-b126-41e823489a32",
+        "templateId": "united_explorer",
+        "name": "Global Entry / TSA PreCheck / NEXUS",
+        "amount": 120,
+        "allowPartial": false,
+        "frequency": "Every 4 Years",
+        "resetType": "Custom",
+        "resetAnchorDate": ""
+      }
+    ]
+  },
+  {
+    "id": "template_wf_active_cash",
+    "name": "Wells Fargo Active Cash",
+    "color": "#b91c1c",
+    "productUrl": null,
+    "quarterlyCategories": null,
+    "issuer": "Wells Fargo",
+    "categories": [
+      {
+        "multiplier": 2,
+        "categoryName": "Everything"
+      }
+    ],
+    "introBonuses": [],
+    "credits": []
   }
 ]

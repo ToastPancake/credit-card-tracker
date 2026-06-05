@@ -22,7 +22,7 @@ export default function TemplatesPage() {
   const [editingId, setEditingId] = useState(null);
   
   const [formData, setFormData] = useState({
-    name: '', issuer: '', productUrl: '', color: '#4a61bd', templateCategories: [], introBonuses: [],
+    name: '', issuer: '', productUrl: '', color: '#4a61bd', templateCategories: [], introBonuses: [], credits: [],
     quarterlyCategories: { Q1: [], Q2: [], Q3: [], Q4: [] }
   });
 
@@ -43,6 +43,7 @@ export default function TemplatesPage() {
       color: t.color || '#4a61bd',
       templateCategories: t.categories || [],
       quarterlyCategories: t.quarterlyCategories || { Q1: [], Q2: [], Q3: [], Q4: [] },
+      credits: t.credits || [],
       introBonuses: t.introBonuses ? t.introBonuses.map(ib => {
          let subRewardAmount = '';
          let subRewardType = 'Points';
@@ -76,7 +77,7 @@ export default function TemplatesPage() {
   const cancelEdit = () => {
     setEditingId(null);
     setShowForm(false);
-    setFormData({ name: '', issuer: '', productUrl: '', color: '#4a61bd', templateCategories: [], introBonuses: [], quarterlyCategories: { Q1: [], Q2: [], Q3: [], Q4: [] } });
+    setFormData({ name: '', issuer: '', productUrl: '', color: '#4a61bd', templateCategories: [], introBonuses: [], credits: [], quarterlyCategories: { Q1: [], Q2: [], Q3: [], Q4: [] } });
   };
 
   const addCategory = () => {
@@ -115,6 +116,21 @@ export default function TemplatesPage() {
     setFormData(prev => ({ ...prev, introBonuses: newBonuses }));
   };
 
+  const addCredit = () => {
+    setFormData(prev => ({
+      ...prev,
+      credits: [...prev.credits, { name: '', amount: 0, allowPartial: false, frequency: 'Annual', resetType: 'Calendar', resetAnchorDate: '' }]
+    }));
+  };
+  const updateCredit = (index, field, value) => {
+    const newCredits = [...formData.credits];
+    newCredits[index][field] = value;
+    setFormData(prev => ({ ...prev, credits: newCredits }));
+  };
+  const removeCredit = (index) => {
+    setFormData(prev => ({ ...prev, credits: prev.credits.filter((_, i) => i !== index) }));
+  };
+
   const updateQuarterly = (q, val) => {
     setFormData(prev => ({
       ...prev,
@@ -140,7 +156,12 @@ export default function TemplatesPage() {
         delete payload.subRewardAmount;
         delete payload.subRewardType;
         return payload;
-      })
+      }),
+      credits: formData.credits.map(c => ({
+        ...c,
+        amount: parseFloat(c.amount) || 0,
+        resetAnchorDate: c.resetType === 'Calendar' ? '' : c.resetAnchorDate
+      }))
     };
 
     await fetch('/api/data/templates', {
@@ -241,6 +262,61 @@ export default function TemplatesPage() {
 
           <div style={{ marginTop: '8px', background: 'rgba(0,0,0,0.2)', padding: '16px', borderRadius: '8px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
+              <h4 style={{ color: 'var(--text-main)', margin: 0 }}>Coupons / Credits</h4>
+              <button type="button" onClick={addCredit} style={{ background: 'transparent', border: '1px solid var(--primary)', color: 'var(--primary)', padding: '4px 8px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.875rem' }}>+ Add Credit</button>
+            </div>
+            {formData.credits.length === 0 && <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', margin: 0 }}>No credits defined.</p>}
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {formData.credits.map((credit, idx) => (
+                <div key={idx} style={{ background: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '6px' }}>
+                  <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', alignItems: 'center' }}>
+                    <div style={{ flex: 1 }}>
+                      <input className="input-glass" style={{ padding: '6px 10px', fontSize: '0.875rem' }} value={credit.name} onChange={e => updateCredit(idx, 'name', e.target.value)} placeholder="Credit Name (e.g. Uber Cash)" required />
+                    </div>
+                    <div style={{ width: '120px' }}>
+                      <input className="input-glass" type="number" step="0.01" style={{ padding: '6px 10px', fontSize: '0.875rem' }} value={credit.amount} onChange={e => updateCredit(idx, 'amount', e.target.value)} placeholder="Value ($)" required />
+                    </div>
+                    <button type="button" onClick={() => removeCredit(idx)} style={{ background: 'transparent', border: 'none', color: '#ef4444', cursor: 'pointer', fontSize: '1.25rem', padding: '0 8px' }}>&times;</button>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.75rem', marginBottom: '4px', color: 'var(--text-muted)' }}>Frequency</label>
+                      <Dropdown options={['Monthly', 'Quarterly', 'Semi-Annual', 'Annual', 'Every 4 Years']} value={credit.frequency} onChange={val => updateCredit(idx, 'frequency', val)} />
+                    </div>
+                    <div>
+                      <label style={{ display: 'block', fontSize: '0.75rem', marginBottom: '4px', color: 'var(--text-muted)' }}>Reset Behavior</label>
+                      <Dropdown options={[{label: 'Calendar (Standard)', value: 'Calendar'}, {label: 'Anniversary / Custom', value: 'Custom'}]} value={credit.resetType} onChange={val => updateCredit(idx, 'resetType', val)} />
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '16px', alignItems: 'center', marginTop: '12px' }}>
+                    {credit.resetType === 'Custom' && (
+                      <div>
+                        <label style={{ display: 'block', fontSize: '0.75rem', marginBottom: '4px', color: 'var(--text-muted)' }}>Reset Date (MM-DD)</label>
+                        <input className="input-glass" style={{ padding: '6px 10px', fontSize: '0.875rem', width: '120px' }} value={credit.resetAnchorDate || ''} onChange={e => updateCredit(idx, 'resetAnchorDate', e.target.value)} placeholder="e.g. 08-01" required />
+                      </div>
+                    )}
+                    
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: credit.resetType === 'Custom' ? '18px' : '0' }}>
+                      <input 
+                        type="checkbox" 
+                        id={`partial-${idx}`}
+                        checked={credit.allowPartial} 
+                        onChange={e => updateCredit(idx, 'allowPartial', e.target.checked)} 
+                        style={{ width: '16px', height: '16px' }}
+                      />
+                      <label htmlFor={`partial-${idx}`} style={{ fontSize: '0.875rem', color: 'var(--text-muted)', cursor: 'pointer' }}>Allow Partial Usage</label>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ marginTop: '8px', background: 'rgba(0,0,0,0.2)', padding: '16px', borderRadius: '8px' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
               <h4 style={{ color: 'var(--text-main)', margin: 0 }}>Intro Offers & Bonuses</h4>
               <button type="button" onClick={addIntroBonus} style={{ background: 'transparent', border: '1px solid var(--primary)', color: 'var(--primary)', padding: '4px 8px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.875rem' }}>+ Add Bonus</button>
             </div>
@@ -331,6 +407,16 @@ export default function TemplatesPage() {
                   {t.categories.map((c, i) => (
                     <span key={i} style={{ background: 'rgba(255,255,255,0.1)', padding: '2px 8px', borderRadius: '12px', fontSize: '0.75rem' }}>
                       {c.categoryName}: {c.multiplier}x
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              {t.credits && t.credits.length > 0 && (
+                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '8px' }}>
+                  {t.credits.map((c, i) => (
+                    <span key={i} style={{ background: 'rgba(16, 185, 129, 0.1)', color: '#10b981', border: '1px solid rgba(16, 185, 129, 0.3)', padding: '2px 8px', borderRadius: '12px', fontSize: '0.75rem' }}>
+                      ${c.amount} {c.frequency} {c.name}
                     </span>
                   ))}
                 </div>

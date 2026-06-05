@@ -12,6 +12,7 @@ export async function GET() {
     
     const categories = db.prepare('SELECT * FROM categories').all();
     const introBonuses = db.prepare('SELECT * FROM intro_bonuses').all();
+    const credits = db.prepare('SELECT * FROM credits').all();
     
     const cardsWithData = cards.map(card => {
       let qCats = null;
@@ -26,7 +27,11 @@ export async function GET() {
           categoryName: c.categoryName,
           multiplier: c.multiplier
         })),
-        introBonuses: introBonuses.filter(ib => ib.cardId === card.id)
+        introBonuses: introBonuses.filter(ib => ib.cardId === card.id),
+        credits: credits.filter(cr => cr.cardId === card.id).map(cr => ({
+          ...cr,
+          allowPartial: cr.allowPartial === 1
+        }))
       };
     });
     
@@ -48,6 +53,7 @@ export async function POST(request) {
     
     const categories = body.categories || [];
     const introBonuses = body.introBonuses || [];
+    const credits = body.credits || [];
 
     const insertCard = db.prepare(`
       INSERT INTO cards (id, name, issuer, actualAccountId, color, productUrl, quarterlyCategories)
@@ -62,6 +68,11 @@ export async function POST(request) {
     const insertIntroBonus = db.prepare(`
       INSERT INTO intro_bonuses (id, cardId, type, description, deadline, spendRequirement, rewardAmount, modifierValue, categoryId)
       VALUES (@bonusId, @cardId, @type, @description, @deadline, @spendRequirement, @rewardAmount, @modifierValue, @categoryId)
+    `);
+
+    const insertCredit = db.prepare(`
+      INSERT INTO credits (id, cardId, name, amount, allowPartial, frequency, resetType, resetAnchorDate)
+      VALUES (@id, @cardId, @name, @amount, @allowPartial, @frequency, @resetType, @resetAnchorDate)
     `);
 
     const transaction = db.transaction(() => {
@@ -97,6 +108,19 @@ export async function POST(request) {
           categoryId: bonus.categoryId || null
         });
       }
+
+      for (const credit of credits) {
+        insertCredit.run({
+          id: credit.id || crypto.randomUUID(),
+          cardId: id,
+          name: credit.name,
+          amount: credit.amount,
+          allowPartial: credit.allowPartial ? 1 : 0,
+          frequency: credit.frequency,
+          resetType: credit.resetType || 'Calendar',
+          resetAnchorDate: credit.resetAnchorDate || null
+        });
+      }
     });
     
     transaction();
@@ -121,6 +145,7 @@ export async function PUT(request) {
     
     const categories = body.categories || [];
     const introBonuses = body.introBonuses || [];
+    const credits = body.credits || [];
 
     const updateCard = db.prepare(`
       UPDATE cards 
@@ -139,6 +164,15 @@ export async function PUT(request) {
       INSERT INTO intro_bonuses (id, cardId, type, description, deadline, spendRequirement, rewardAmount, modifierValue, categoryId)
       VALUES (@bonusId, @cardId, @type, @description, @deadline, @spendRequirement, @rewardAmount, @modifierValue, @categoryId)
     `);
+
+    const updateCredit = db.prepare(`
+      UPDATE credits SET name=@name, amount=@amount, allowPartial=@allowPartial, frequency=@frequency, resetType=@resetType, resetAnchorDate=@resetAnchorDate WHERE id=@id
+    `);
+    const insertCredit = db.prepare(`
+      INSERT INTO credits (id, cardId, name, amount, allowPartial, frequency, resetType, resetAnchorDate)
+      VALUES (@id, @cardId, @name, @amount, @allowPartial, @frequency, @resetType, @resetAnchorDate)
+    `);
+    const deleteCredit = db.prepare(`DELETE FROM credits WHERE id = ?`);
 
     const transaction = db.transaction(() => {
       updateCard.run({ 
@@ -176,6 +210,40 @@ export async function PUT(request) {
           modifierValue: bonus.modifierValue || null,
           categoryId: bonus.categoryId || null
         });
+      }
+
+      // Safe update for credits to preserve foreign keys in credit_usage
+      const existingCreditIds = db.prepare('SELECT id FROM credits WHERE cardId = ?').all(id).map(r => r.id);
+      const incomingCreditIds = credits.map(c => c.id).filter(Boolean);
+
+      const toDelete = existingCreditIds.filter(eid => !incomingCreditIds.includes(eid));
+      for (const delId of toDelete) {
+        deleteCredit.run(delId);
+      }
+
+      for (const credit of credits) {
+        if (credit.id && existingCreditIds.includes(credit.id)) {
+          updateCredit.run({
+            id: credit.id,
+            name: credit.name,
+            amount: credit.amount,
+            allowPartial: credit.allowPartial ? 1 : 0,
+            frequency: credit.frequency,
+            resetType: credit.resetType || 'Calendar',
+            resetAnchorDate: credit.resetAnchorDate || null
+          });
+        } else {
+          insertCredit.run({
+            id: credit.id || crypto.randomUUID(),
+            cardId: id,
+            name: credit.name,
+            amount: credit.amount,
+            allowPartial: credit.allowPartial ? 1 : 0,
+            frequency: credit.frequency,
+            resetType: credit.resetType || 'Calendar',
+            resetAnchorDate: credit.resetAnchorDate || null
+          });
+        }
       }
     });
     

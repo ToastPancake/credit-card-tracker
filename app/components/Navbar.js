@@ -8,6 +8,7 @@ export default function Navbar() {
 
   const links = [
     { name: 'Wallet', path: '/' },
+    { name: 'Credits', path: '/credits' },
     { name: 'SUB Tracker', path: '/subs' },
     { name: 'Cards', path: '/accounts' },
     { name: 'Data', path: '/data' },
@@ -29,7 +30,7 @@ export default function Navbar() {
         💳 Tracker
       </div>
       {links.map(link => {
-        const isActive = pathname === link.path;
+        const isActive = link.path === '/' ? pathname === '/' : pathname.startsWith(link.path);
         return (
           <Link key={link.path} href={link.path} style={{
             color: isActive ? 'var(--primary)' : 'var(--text-muted)',
