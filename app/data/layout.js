@@ -19,6 +19,9 @@ export default function DataLayout({ children }) {
         <Link href="/data/templates" style={{ textDecoration: 'none', padding: '8px 16px', borderRadius: '4px', background: pathname.includes('/templates') ? 'var(--primary)' : 'transparent', color: pathname.includes('/templates') ? 'white' : 'var(--text-muted)' }}>
           Card Templates
         </Link>
+        <Link href="/data/resources" style={{ textDecoration: 'none', padding: '8px 16px', borderRadius: '4px', background: pathname.includes('/resources') ? 'var(--primary)' : 'transparent', color: pathname.includes('/resources') ? 'white' : 'var(--text-muted)' }}>
+          Resources
+        </Link>
       </div>
 
       {children}
