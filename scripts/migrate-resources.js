@@ -42,8 +42,9 @@ if (existingSections === 0) {
   const blogs = [
     { name: 'Doctor of Credit', url: 'https://www.doctorofcredit.com/', description: 'The premier source for credit card sign-up bonuses, bank account bonuses, and deals.' },
     { name: 'US Credit Card Guide', url: 'https://www.uscreditcardguide.com/', description: 'Detailed reviews, application rules, and historical high sign-up bonus tracking.' },
-    { name: 'The Points Guy', url: 'https://thepointsguy.com/', description: 'General travel and credit card news, beginner-friendly guides.' },
-    { name: 'Frequent Miler', url: 'https://frequentmiler.com/', description: 'Advanced strategies for maximizing points and miles.' }
+    { name: 'Miles to Memories', url: 'https://milestomemories.com/', description: 'Travel hacking news, tips, and credit card strategies.' },
+    { name: 'Frequent Miler', url: 'https://frequentmiler.com/', description: 'Advanced strategies for maximizing points and miles.' },
+    { name: 'One Mile at a Time', url: 'https://onemileatatime.com/', description: 'Aviation news, airline reviews, and credit card maximizing strategies.' }
   ];
 
   const tools = [
