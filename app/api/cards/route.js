@@ -56,9 +56,10 @@ export async function POST(request) {
     const credits = body.credits || [];
 
     const insertCard = db.prepare(`
-      INSERT INTO cards (id, name, issuer, actualAccountId, color, productUrl, quarterlyCategories)
-      VALUES (@id, @name, @issuer, @actualAccountId, @color, @productUrl, @quarterlyCategories)
+      INSERT INTO cards (id, name, issuer, actualAccountId, color, productUrl, quarterlyCategories, annualFee)
+      VALUES (@id, @name, @issuer, @actualAccountId, @color, @productUrl, @quarterlyCategories, @annualFee)
     `);
+
     
     const insertCategory = db.prepare(`
       INSERT INTO categories (id, cardId, categoryName, multiplier)
@@ -71,9 +72,10 @@ export async function POST(request) {
     `);
 
     const insertCredit = db.prepare(`
-      INSERT INTO credits (id, cardId, name, amount, allowPartial, frequency, resetType, resetAnchorDate)
-      VALUES (@id, @cardId, @name, @amount, @allowPartial, @frequency, @resetType, @resetAnchorDate)
+      INSERT INTO credits (id, cardId, name, amount, allowPartial, frequency, resetType, resetAnchorDate, type)
+      VALUES (@id, @cardId, @name, @amount, @allowPartial, @frequency, @resetType, @resetAnchorDate, @type)
     `);
+
 
     const transaction = db.transaction(() => {
       insertCard.run({ 
@@ -83,7 +85,8 @@ export async function POST(request) {
         actualAccountId, 
         color,
         productUrl,
-        quarterlyCategories
+        quarterlyCategories,
+        annualFee: parseFloat(body.annualFee) || 0
       });
 
       for (const cat of categories) {
@@ -118,8 +121,10 @@ export async function POST(request) {
           allowPartial: credit.allowPartial ? 1 : 0,
           frequency: credit.frequency,
           resetType: credit.resetType || 'Calendar',
-          resetAnchorDate: credit.resetAnchorDate || null
+          resetAnchorDate: credit.resetAnchorDate || null,
+          type: credit.type || 'General'
         });
+
       }
     });
     
@@ -149,9 +154,10 @@ export async function PUT(request) {
 
     const updateCard = db.prepare(`
       UPDATE cards 
-      SET name = @name, issuer = @issuer, actualAccountId = @actualAccountId, color = @color, productUrl = @productUrl, quarterlyCategories = @quarterlyCategories
+      SET name = @name, issuer = @issuer, actualAccountId = @actualAccountId, color = @color, productUrl = @productUrl, quarterlyCategories = @quarterlyCategories, annualFee = @annualFee
       WHERE id = @id
     `);
+
 
     const deleteCategories = db.prepare(`DELETE FROM categories WHERE cardId = ?`);
     const insertCategory = db.prepare(`
@@ -166,12 +172,13 @@ export async function PUT(request) {
     `);
 
     const updateCredit = db.prepare(`
-      UPDATE credits SET name=@name, amount=@amount, allowPartial=@allowPartial, frequency=@frequency, resetType=@resetType, resetAnchorDate=@resetAnchorDate WHERE id=@id
+      UPDATE credits SET name=@name, amount=@amount, allowPartial=@allowPartial, frequency=@frequency, resetType=@resetType, resetAnchorDate=@resetAnchorDate, type=@type WHERE id=@id
     `);
     const insertCredit = db.prepare(`
-      INSERT INTO credits (id, cardId, name, amount, allowPartial, frequency, resetType, resetAnchorDate)
-      VALUES (@id, @cardId, @name, @amount, @allowPartial, @frequency, @resetType, @resetAnchorDate)
+      INSERT INTO credits (id, cardId, name, amount, allowPartial, frequency, resetType, resetAnchorDate, type)
+      VALUES (@id, @cardId, @name, @amount, @allowPartial, @frequency, @resetType, @resetAnchorDate, @type)
     `);
+
     const deleteCredit = db.prepare(`DELETE FROM credits WHERE id = ?`);
 
     const transaction = db.transaction(() => {
@@ -182,7 +189,8 @@ export async function PUT(request) {
         actualAccountId, 
         color,
         productUrl,
-        quarterlyCategories
+        quarterlyCategories,
+        annualFee: parseFloat(body.annualFee) || 0
       });
       
       deleteCategories.run(id);
@@ -230,7 +238,8 @@ export async function PUT(request) {
             allowPartial: credit.allowPartial ? 1 : 0,
             frequency: credit.frequency,
             resetType: credit.resetType || 'Calendar',
-            resetAnchorDate: credit.resetAnchorDate || null
+            resetAnchorDate: credit.resetAnchorDate || null,
+            type: credit.type || 'General'
           });
         } else {
           insertCredit.run({
@@ -241,7 +250,8 @@ export async function PUT(request) {
             allowPartial: credit.allowPartial ? 1 : 0,
             frequency: credit.frequency,
             resetType: credit.resetType || 'Calendar',
-            resetAnchorDate: credit.resetAnchorDate || null
+            resetAnchorDate: credit.resetAnchorDate || null,
+            type: credit.type || 'General'
           });
         }
       }

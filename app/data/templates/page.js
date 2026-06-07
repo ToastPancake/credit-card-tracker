@@ -1,6 +1,10 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Dropdown from '@/components/Dropdown';
+import PageLayout from '@/components/PageLayout';
+import SidebarFilter, { FilterSection } from '@/components/SidebarFilter';
+import TriStateCheckbox from '@/components/TriStateCheckbox';
+import Modal from '@/components/Modal';
 
 const BONUS_TYPES = [
   { label: 'Standard SUB', value: 'SpendReward' },
@@ -23,8 +27,46 @@ export default function TemplatesPage() {
   
   const [formData, setFormData] = useState({
     name: '', issuer: '', productUrl: '', color: '#4a61bd', templateCategories: [], introBonuses: [], credits: [],
-    quarterlyCategories: { Q1: [], Q2: [], Q3: [], Q4: [] }
+    quarterlyCategories: { Q1: [], Q2: [], Q3: [], Q4: [] }, annualFee: 0
   });
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedIssuers, setSelectedIssuers] = useState({});
+  const [annualFeeFilter, setAnnualFeeFilter] = useState('all');
+
+  const toggleFilter = (setFn, item) => {
+    setFn(prev => {
+      const current = prev[item];
+      if (!current) return { ...prev, [item]: 'include' };
+      if (current === 'include') return { ...prev, [item]: 'exclude' };
+      const next = { ...prev };
+      delete next[item];
+      return next;
+    });
+  };
+
+  const handleClearFilters = () => {
+    setSearchQuery('');
+    setSelectedIssuers({});
+    setAnnualFeeFilter('all');
+  };
+
+  const filteredTemplates = useMemo(() => {
+    let filtered = templates;
+    if (searchQuery) {
+      filtered = filtered.filter(c => c.name.toLowerCase().includes(searchQuery.toLowerCase()));
+    }
+    const includeIssuers = Object.keys(selectedIssuers).filter(k => selectedIssuers[k] === 'include');
+    const excludeIssuers = Object.keys(selectedIssuers).filter(k => selectedIssuers[k] === 'exclude');
+    if (includeIssuers.length > 0) filtered = filtered.filter(c => includeIssuers.includes(c.issuer));
+    if (excludeIssuers.length > 0) filtered = filtered.filter(c => !excludeIssuers.includes(c.issuer));
+
+    if (annualFeeFilter === 'no_fee') filtered = filtered.filter(c => !c.annualFee || c.annualFee === 0);
+    if (annualFeeFilter === 'has_fee') filtered = filtered.filter(c => c.annualFee > 0);
+
+    return filtered;
+  }, [templates, searchQuery, selectedIssuers, annualFeeFilter]);
+
 
   const fetchData = () => {
     fetch('/api/data/templates').then(res => res.json()).then(setTemplates);
@@ -43,6 +85,7 @@ export default function TemplatesPage() {
       color: t.color || '#4a61bd',
       templateCategories: t.categories || [],
       quarterlyCategories: t.quarterlyCategories || { Q1: [], Q2: [], Q3: [], Q4: [] },
+      annualFee: t.annualFee || 0,
       credits: t.credits || [],
       introBonuses: t.introBonuses ? t.introBonuses.map(ib => {
          let subRewardAmount = '';
@@ -77,7 +120,7 @@ export default function TemplatesPage() {
   const cancelEdit = () => {
     setEditingId(null);
     setShowForm(false);
-    setFormData({ name: '', issuer: '', productUrl: '', color: '#4a61bd', templateCategories: [], introBonuses: [], credits: [], quarterlyCategories: { Q1: [], Q2: [], Q3: [], Q4: [] } });
+    setFormData({ name: '', issuer: '', productUrl: '', color: '#4a61bd', templateCategories: [], introBonuses: [], credits: [], quarterlyCategories: { Q1: [], Q2: [], Q3: [], Q4: [] }, annualFee: 0 });
   };
 
   const addCategory = () => {
@@ -119,7 +162,7 @@ export default function TemplatesPage() {
   const addCredit = () => {
     setFormData(prev => ({
       ...prev,
-      credits: [...prev.credits, { name: '', amount: 0, allowPartial: false, frequency: 'Annual', resetType: 'Calendar', resetAnchorDate: '' }]
+      credits: [...prev.credits, { name: '', amount: 0, allowPartial: false, frequency: 'Annual', resetType: 'Calendar', resetAnchorDate: '', type: 'General' }]
     }));
   };
   const updateCredit = (index, field, value) => {
@@ -148,6 +191,7 @@ export default function TemplatesPage() {
       color: formData.color,
       categories: formData.templateCategories,
       quarterlyCategories: formData.quarterlyCategories,
+      annualFee: formData.annualFee,
       introBonuses: formData.introBonuses.map(ib => {
         const payload = { ...ib };
         if (ib.type === 'SpendReward') {
@@ -178,16 +222,57 @@ export default function TemplatesPage() {
   const categoryOptions = categories.map(c => ({ label: c.name, value: c.id }));
 
   return (
-    <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-        <h2 style={{ margin: 0 }}>Manage Card Templates</h2>
-        {!showForm && <button className="btn-primary" onClick={() => setShowForm(true)}>+ Add Template</button>}
-      </div>
+    <PageLayout
+      header={
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+          <h2 style={{ margin: 0 }}>Manage Card Templates</h2>
+          {!showForm && <button className="btn-primary" onClick={() => setShowForm(true)}>+ Add Template</button>}
+        </div>
+      }
+      leftSidebar={
+        <SidebarFilter 
+          title="Filters" 
+          onClearAll={handleClearFilters} 
+          showClearAll={Object.keys(selectedIssuers).length > 0 || annualFeeFilter !== 'all' || searchQuery}
+        >
+          <FilterSection title="Search">
+            <input
+              type="text"
+              placeholder="Search by name..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="input-glass"
+              style={{ width: '100%', marginBottom: '8px' }}
+            />
+          </FilterSection>
 
-      {showForm && (
-        <form className="glass-panel" onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '800px', marginBottom: '32px', border: '1px solid var(--primary)' }}>
-          <h3 style={{ margin: 0 }}>{editingId ? 'Edit Template' : 'New Template'}</h3>
-          
+          <FilterSection title="Annual Fee">
+            <Dropdown
+              options={[
+                { label: 'All Templates', value: 'all' },
+                { label: 'No Annual Fee', value: 'no_fee' },
+                { label: 'Has Annual Fee', value: 'has_fee' }
+              ]}
+              value={annualFeeFilter}
+              onChange={setAnnualFeeFilter}
+            />
+          </FilterSection>
+
+          <FilterSection title="Issuers" isScrollable>
+            {issuers.map(i => (
+              <TriStateCheckbox 
+                key={i.name} 
+                label={i.name} 
+                state={selectedIssuers[i.name]} 
+                onClick={() => toggleFilter(setSelectedIssuers, i.name)} 
+              />
+            ))}
+          </FilterSection>
+        </SidebarFilter>
+      }
+    >
+      <Modal isOpen={showForm} onClose={cancelEdit} title={editingId ? 'Edit Template' : 'New Template'} maxWidth="800px">
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
             <div>
               <label style={{ display: 'block', fontSize: '0.875rem', marginBottom: '8px', color: 'var(--text-muted)' }}>Template Name</label>
@@ -205,6 +290,10 @@ export default function TemplatesPage() {
             <div>
               <label style={{ display: 'block', fontSize: '0.875rem', marginBottom: '8px', color: 'var(--text-muted)' }}>Product Page URL (Optional)</label>
               <input className="input-glass" type="url" placeholder="https://..." value={formData.productUrl} onChange={e => setFormData({...formData, productUrl: e.target.value})} />
+            </div>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.875rem', marginBottom: '8px', color: 'var(--text-muted)' }}>Annual Fee ($)</label>
+              <input className="input-glass" type="number" step="0.01" placeholder="e.g. 95" value={formData.annualFee} onChange={e => setFormData({...formData, annualFee: e.target.value})} />
             </div>
           </div>
 
@@ -276,6 +365,9 @@ export default function TemplatesPage() {
                     </div>
                     <div style={{ width: '120px' }}>
                       <input className="input-glass" type="number" step="0.01" style={{ padding: '6px 10px', fontSize: '0.875rem' }} value={credit.amount} onChange={e => updateCredit(idx, 'amount', e.target.value)} placeholder="Value ($)" required />
+                    </div>
+                    <div style={{ width: '150px' }}>
+                      <Dropdown options={['General', 'Travel', 'Dining', 'Incidental', 'Streaming', 'Gaming', 'Shopping', 'Fitness']} value={credit.type || 'General'} onChange={val => updateCredit(idx, 'type', val)} />
                     </div>
                     <button type="button" onClick={() => removeCredit(idx)} style={{ background: 'transparent', border: 'none', color: '#ef4444', cursor: 'pointer', fontSize: '1.25rem', padding: '0 8px' }}>&times;</button>
                   </div>
@@ -394,10 +486,13 @@ export default function TemplatesPage() {
             <button type="submit" className="btn-primary">Save Template</button>
           </div>
         </form>
-      )}
+      </Modal>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '800px' }}>
-        {templates.map(t => (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '800px', width: '100%' }}>
+        {filteredTemplates.length === 0 && (
+          <p style={{ color: 'var(--text-muted)' }}>No templates found.</p>
+        )}
+        {filteredTemplates.map(t => (
           <div key={t.id} className="glass-panel" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderLeft: `4px solid ${t.color}` }}>
             <div>
               <div style={{ fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '4px' }}>{t.name} <span style={{ color: 'var(--text-muted)', fontSize: '0.875rem', fontWeight: 'normal' }}>({t.issuer})</span></div>
@@ -440,13 +535,27 @@ export default function TemplatesPage() {
                 </div>
               )}
             </div>
-            <div style={{ display: 'flex', gap: '12px', marginTop: '4px' }}>
-              <button className="btn-primary" style={{ background: 'var(--surface-hover)', padding: '6px 12px', fontSize: '0.875rem' }} onClick={() => handleEdit(t)}>Edit</button>
-              <button className="btn-primary" style={{ background: '#ef4444', padding: '6px 12px', fontSize: '0.875rem' }} onClick={() => handleDelete(t.id)}>Delete</button>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', alignSelf: 'stretch', gap: '8px' }}>
+              <div style={{ display: 'flex', gap: '12px', marginTop: '4px' }}>
+                <button className="btn-primary" style={{ background: 'var(--surface-hover)', padding: '6px 12px', fontSize: '0.875rem' }} onClick={() => handleEdit(t)}>Edit</button>
+                <button className="btn-primary" style={{ background: '#ef4444', padding: '6px 12px', fontSize: '0.875rem' }} onClick={() => handleDelete(t.id)}>Delete</button>
+              </div>
+              <div style={{ 
+                fontSize: '0.75rem', 
+                fontWeight: 'bold', 
+                color: t.annualFee > 0 ? '#f87171' : '#10b981', 
+                background: t.annualFee > 0 ? 'rgba(248, 113, 113, 0.1)' : 'rgba(16, 185, 129, 0.1)',
+                border: `1px solid ${t.annualFee > 0 ? 'rgba(248, 113, 113, 0.3)' : 'rgba(16, 185, 129, 0.3)'}`,
+                padding: '4px 10px', 
+                borderRadius: '12px',
+                marginTop: 'auto'
+              }}>
+                {t.annualFee > 0 ? `$${t.annualFee} AF` : 'No AF'}
+              </div>
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </PageLayout>
   );
 }

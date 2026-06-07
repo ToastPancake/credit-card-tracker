@@ -21,11 +21,12 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 95
   },
   {
     "id": "amex_gold",
-    "name": "Amex Gold Card",
+    "name": "Amex Gold",
     "color": "#eab308",
     "productUrl": null,
     "quarterlyCategories": null,
@@ -66,7 +67,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Dining"
       },
       {
         "id": "3b2c4be9-c406-4317-ba9e-894aab3a3e9e",
@@ -76,7 +78,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Travel"
       },
       {
         "id": "82a86849-509a-4959-a8fa-86e1069b7571",
@@ -86,7 +89,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Dining"
       },
       {
         "id": "14756610-047d-4352-8684-9c2bfaafcdfb",
@@ -96,13 +100,15 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Dining"
       }
-    ]
+    ],
+    "annualFee": 325
   },
   {
     "id": "amex_green",
-    "name": "Amex Green Card",
+    "name": "Amex Green",
     "color": "#22c55e",
     "productUrl": null,
     "quarterlyCategories": null,
@@ -135,7 +141,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Custom",
-        "resetAnchorDate": ""
+        "resetAnchorDate": "",
+        "type": "Travel"
       },
       {
         "id": "fc3445a3-1786-4304-b2e7-f822b96bc914",
@@ -145,9 +152,11 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Travel"
       }
-    ]
+    ],
+    "annualFee": 150
   },
   {
     "id": "amex_platinum",
@@ -180,7 +189,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Travel"
       },
       {
         "id": "9c8a0c87-35ae-4cdc-8852-ac0dc39cac72",
@@ -190,7 +200,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Dining"
       },
       {
         "id": "4f61a3fd-1785-4a48-8b4c-8fed5887f68f",
@@ -200,7 +211,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Travel"
       },
       {
         "id": "a3fe6c89-1a43-4692-8fb9-e859db81383c",
@@ -210,7 +222,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Lifestyle"
       },
       {
         "id": "13b072f0-9b7d-4446-ac87-efa60e38402c",
@@ -220,7 +233,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "General"
       },
       {
         "id": "3b240c88-5cf0-4da3-9516-6b6e60c02bd6",
@@ -230,7 +244,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Lifestyle"
       },
       {
         "id": "e50b8ef0-db81-4a57-82dd-324e7d671e02",
@@ -240,7 +255,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Custom",
-        "resetAnchorDate": ""
+        "resetAnchorDate": "",
+        "type": "Travel"
       },
       {
         "id": "18f119e4-c395-4de7-8b53-433170488a14",
@@ -250,7 +266,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Travel"
       },
       {
         "id": "98b235a6-3693-47e1-a00d-1abc59f201c3",
@@ -260,7 +277,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "General"
       },
       {
         "id": "4ba3ad63-57ed-44cc-ab96-51547f7fb78a",
@@ -270,9 +288,11 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Lifestyle"
       }
-    ]
+    ],
+    "annualFee": 695
   },
   {
     "id": "amex_bce",
@@ -309,7 +329,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "General"
       },
       {
         "id": "c5e88aff-42c0-495c-9d50-7aafcfc2ea24",
@@ -319,9 +340,11 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Lifestyle"
       }
-    ]
+    ],
+    "annualFee": 0
   },
   {
     "id": "amex_bcp",
@@ -362,9 +385,11 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Lifestyle"
       }
-    ]
+    ],
+    "annualFee": 95
   },
   {
     "id": "template_capone_quicksilver",
@@ -384,7 +409,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 0
   },
   {
     "id": "template_capone_savor",
@@ -424,7 +450,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 95
   },
   {
     "id": "template_capone_savor_one",
@@ -464,7 +491,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 0
   },
   {
     "id": "template_capone_venture",
@@ -493,9 +521,11 @@
         "allowPartial": false,
         "frequency": "Every 4 Years",
         "resetType": "Custom",
-        "resetAnchorDate": ""
+        "resetAnchorDate": "",
+        "type": "Travel"
       }
-    ]
+    ],
+    "annualFee": 95
   },
   {
     "id": "template_capone_venture_x",
@@ -528,7 +558,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Travel"
       },
       {
         "id": "9931d731-ba7f-4e31-a19f-fccbe5ebf865",
@@ -538,7 +569,8 @@
         "allowPartial": false,
         "frequency": "Every 4 Years",
         "resetType": "Custom",
-        "resetAnchorDate": ""
+        "resetAnchorDate": "",
+        "type": "Travel"
       },
       {
         "id": "eb5d988c-cb65-42af-8ede-154cb17b31ce",
@@ -548,9 +580,11 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Custom",
-        "resetAnchorDate": ""
+        "resetAnchorDate": "",
+        "type": "Travel"
       }
-    ]
+    ],
+    "annualFee": 395
   },
   {
     "id": "template_capone_venture_x_business",
@@ -583,7 +617,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Travel"
       },
       {
         "id": "78f6ceb7-a877-46a4-b046-d6d5baf0df84",
@@ -593,9 +628,11 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Custom",
-        "resetAnchorDate": ""
+        "resetAnchorDate": "",
+        "type": "Travel"
       }
-    ]
+    ],
+    "annualFee": 395
   },
   {
     "id": "template_capone_venture_one",
@@ -615,7 +652,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 0
   },
   {
     "id": "chase_freedom_flex",
@@ -647,7 +685,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 0
   },
   {
     "id": "template_chase_freedom_unlimited",
@@ -675,7 +714,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 0
   },
   {
     "id": "chase_freedom_unlimited",
@@ -703,7 +743,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 0
   },
   {
     "id": "chase_ink_business_cash",
@@ -739,7 +780,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 0
   },
   {
     "id": "chase_ink_business_preferred",
@@ -775,7 +817,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 95
   },
   {
     "id": "chase_ink_business_unlimited",
@@ -795,7 +838,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 0
   },
   {
     "id": "template_chase_sapphire_preferred",
@@ -827,7 +871,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 95
   },
   {
     "id": "chase_sapphire_preferred",
@@ -872,9 +917,11 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Travel"
       }
-    ]
+    ],
+    "annualFee": 95
   },
   {
     "id": "template_chase_sapphire_reserve",
@@ -898,7 +945,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 550
   },
   {
     "id": "chase_sapphire_reserve",
@@ -939,7 +987,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Travel"
       },
       {
         "id": "c58d0acc-0305-43d1-ab64-806b428416a5",
@@ -949,7 +998,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Travel"
       },
       {
         "id": "a97415aa-3b85-4bbe-849e-43145ffc9631",
@@ -959,7 +1009,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Travel"
       },
       {
         "id": "e73185d5-580a-4f86-95a4-52faa3de4c35",
@@ -969,9 +1020,11 @@
         "allowPartial": false,
         "frequency": "Every 4 Years",
         "resetType": "Custom",
-        "resetAnchorDate": ""
+        "resetAnchorDate": "",
+        "type": "Travel"
       }
-    ]
+    ],
+    "annualFee": 550
   },
   {
     "id": "template_citi_aadvantage_executive",
@@ -1004,7 +1057,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Dining"
       },
       {
         "id": "a67c05db-0276-44f1-bc28-753f686222d5",
@@ -1014,7 +1068,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "General"
       },
       {
         "id": "6fbc63a8-a9af-4ebb-807e-35479a727bd1",
@@ -1024,7 +1079,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "General"
       },
       {
         "id": "b9808856-db6f-4e07-8bd6-6f5be72de61f",
@@ -1034,9 +1090,11 @@
         "allowPartial": false,
         "frequency": "Every 4 Years",
         "resetType": "Custom",
-        "resetAnchorDate": ""
+        "resetAnchorDate": "",
+        "type": "Travel"
       }
-    ]
+    ],
+    "annualFee": 595
   },
   {
     "id": "template_citi_aadvantage_platinum_select",
@@ -1064,7 +1122,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 99
   },
   {
     "id": "template_citi_custom_cash",
@@ -1084,7 +1143,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 0
   },
   {
     "id": "template_citi_double_cash",
@@ -1104,7 +1164,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 0
   },
   {
     "id": "template_citi_rewards_plus",
@@ -1124,7 +1185,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 0
   },
   {
     "id": "template_citi_strata_premier",
@@ -1173,13 +1235,15 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Travel"
       }
-    ]
+    ],
+    "annualFee": 95
   },
   {
     "id": "template_costco_anywhere_visa",
-    "name": "Costco Anywhere Visa",
+    "name": "Citi Costco Anywhere Visa",
     "color": "#4b5563",
     "productUrl": null,
     "quarterlyCategories": null,
@@ -1207,7 +1271,8 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 0
   },
   {
     "id": "template_discover_it",
@@ -1239,7 +1304,8 @@
         "categoryId": null
       }
     ],
-    "credits": []
+    "credits": [],
+    "annualFee": 0
   },
   {
     "id": "amex_hilton_aspire",
@@ -1280,7 +1346,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "General"
       },
       {
         "id": "0e1d21b0-bc08-4cb6-8d85-356a19bcefc2",
@@ -1290,7 +1357,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "General"
       },
       {
         "id": "1207adef-2aac-49c1-9750-af44ac0f7b2d",
@@ -1300,7 +1368,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Custom",
-        "resetAnchorDate": ""
+        "resetAnchorDate": "",
+        "type": "Travel"
       },
       {
         "id": "c852f505-2dab-4d5b-87dc-9b2a229c087f",
@@ -1310,9 +1379,11 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "General"
       }
-    ]
+    ],
+    "annualFee": 550
   },
   {
     "id": "amex_hilton_surpass",
@@ -1357,13 +1428,15 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "General"
       }
-    ]
+    ],
+    "annualFee": 150
   },
   {
     "id": "marriott_bonvoy_boundless",
-    "name": "Marriott Bonvoy Boundless",
+    "name": "Chase Marriott Bonvoy Boundless",
     "color": "#171717",
     "productUrl": null,
     "quarterlyCategories": null,
@@ -1400,7 +1473,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Travel"
       },
       {
         "id": "1c6c6c1b-9105-49b6-a3fd-cfe3a588b8e9",
@@ -1410,9 +1484,11 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Travel"
       }
-    ]
+    ],
+    "annualFee": 95
   },
   {
     "id": "amex_marriott_brilliant",
@@ -1449,7 +1525,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Dining"
       },
       {
         "id": "767591b8-ae04-4a39-b0c5-13c987bd099d",
@@ -1459,7 +1536,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "General"
       },
       {
         "id": "d7823fb9-8f4c-4759-a4d7-172345569780",
@@ -1469,13 +1547,15 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Custom",
-        "resetAnchorDate": ""
+        "resetAnchorDate": "",
+        "type": "Travel"
       }
-    ]
+    ],
+    "annualFee": 650
   },
   {
     "id": "united_explorer",
-    "name": "United Explorer Card",
+    "name": "Chase United Explorer Card",
     "color": "#003366",
     "productUrl": null,
     "quarterlyCategories": null,
@@ -1508,7 +1588,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "Travel"
       },
       {
         "id": "558e3052-37ad-44a3-a42f-8e0df486bd71",
@@ -1518,7 +1599,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "General"
       },
       {
         "id": "a8ea1a06-5f4d-47a3-a5fe-adea792d1f97",
@@ -1528,7 +1610,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "General"
       },
       {
         "id": "b01d43b6-4749-4ff1-8193-05fe11618a55",
@@ -1538,7 +1621,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "General"
       },
       {
         "id": "48513a67-cfa7-4443-9167-bde3f3baf316",
@@ -1548,7 +1632,8 @@
         "allowPartial": false,
         "frequency": "Annual",
         "resetType": "Calendar",
-        "resetAnchorDate": null
+        "resetAnchorDate": null,
+        "type": "General"
       },
       {
         "id": "1b1f93a3-8601-4656-b126-41e823489a32",
@@ -1558,9 +1643,11 @@
         "allowPartial": false,
         "frequency": "Every 4 Years",
         "resetType": "Custom",
-        "resetAnchorDate": ""
+        "resetAnchorDate": "",
+        "type": "Travel"
       }
-    ]
+    ],
+    "annualFee": 95
   },
   {
     "id": "template_wf_active_cash",
@@ -1576,6 +1663,7 @@
       }
     ],
     "introBonuses": [],
-    "credits": []
+    "credits": [],
+    "annualFee": 0
   }
 ]

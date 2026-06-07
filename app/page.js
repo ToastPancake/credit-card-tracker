@@ -1,30 +1,9 @@
 'use client';
 import { useState, useEffect, useMemo } from 'react';
-import Dropdown from '../components/Dropdown';
-
-const TriStateCheckbox = ({ label, state, onClick }) => {
-  let icon = null;
-  let bg = 'transparent';
-  let border = '1px solid var(--border)';
-  if (state === 'include') {
-    bg = 'var(--primary)';
-    border = '1px solid var(--primary)';
-    icon = <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3"><polyline points="20 6 9 17 4 12"></polyline></svg>;
-  } else if (state === 'exclude') {
-    bg = '#ef4444';
-    border = '1px solid #ef4444';
-    icon = <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>;
-  }
-
-  return (
-    <div onClick={onClick} style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', padding: '6px 0', userSelect: 'none' }}>
-      <div style={{ width: '18px', height: '18px', borderRadius: '4px', background: bg, border: border, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-        {icon}
-      </div>
-      <span style={{ color: state ? 'var(--text-main)' : 'var(--text-muted)', fontSize: '0.875rem', lineHeight: '1.2' }}>{label}</span>
-    </div>
-  );
-};
+import Dropdown from '@/components/Dropdown';
+import TriStateCheckbox from '@/components/TriStateCheckbox';
+import PageLayout from '@/components/PageLayout';
+import SidebarFilter, { FilterSection } from '@/components/SidebarFilter';
 
 export default function Dashboard() {
   const [cards, setCards] = useState([]);
@@ -280,110 +259,128 @@ export default function Dashboard() {
   };
 
   return (
-    <main>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-        <h1 className="page-title" style={{ marginBottom: 0 }}>Wallet Overview</h1>
-      </div>
-
-      {cards.length === 0 ? (
+    <PageLayout
+      header={
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+          <h1 className="page-title" style={{ marginBottom: 0 }}>Wallet Overview</h1>
+        </div>
+      }
+      emptyState={cards.length === 0 ? (
         <div style={{ color: 'var(--text-muted)', fontStyle: 'italic', marginBottom: '32px' }}>
           No cards added yet. Go to the Cards tab to add your first card!
         </div>
-      ) : (
-        <div style={{ display: 'flex', gap: '24px', flexDirection: 'row', flexWrap: 'wrap', alignItems: 'flex-start' }}>
+      ) : null}
+      leftSidebar={
+        <SidebarFilter 
+          title="Filters" 
+          onClearAll={handleClearFilters} 
+          showClearAll={Object.keys(selectedIssuers).length > 0 || Object.keys(selectedCategories).length > 0 || subStatus !== 'all' || tiebreaker !== 'default'}
+        >
+          <FilterSection title="Sign-Up Bonus Status">
+            <Dropdown
+              options={[
+                { label: 'All Cards', value: 'all' },
+                { label: 'Working Towards SUB', value: 'working_towards' },
+                { label: 'No Active SUB', value: 'no_sub' }
+              ]}
+              value={subStatus}
+              onChange={setSubStatus}
+            />
+          </FilterSection>
+
+          <FilterSection title="Issuers" isScrollable>
+            {issuers.map(issuer => (
+              <TriStateCheckbox 
+                key={issuer} 
+                label={issuer} 
+                state={selectedIssuers[issuer]} 
+                onClick={() => toggleFilter(setSelectedIssuers, issuer)} 
+              />
+            ))}
+          </FilterSection>
+
+          <FilterSection title="Categories" isScrollable>
+            {commonCategories.map(c => (
+              <TriStateCheckbox 
+                key={c} 
+                label={c} 
+                state={selectedCategories[c]} 
+                onClick={() => toggleFilter(setSelectedCategories, c)} 
+              />
+            ))}
+          </FilterSection>
           
-          {/* LEFT SIDEBAR (Filters) */}
-          <div className="glass-panel" style={{ flex: '0 0 280px', position: 'sticky', top: '24px', width: '100%' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-              <h3 style={{ margin: 0, fontSize: '1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" /></svg>
-                Filters
-              </h3>
-              {(Object.keys(selectedIssuers).length > 0 || Object.keys(selectedCategories).length > 0 || subStatus !== 'all' || tiebreaker !== 'default') && (
-                <button onClick={handleClearFilters} style={{ background: 'transparent', border: 'none', color: 'var(--text-muted)', fontSize: '0.75rem', cursor: 'pointer', textDecoration: 'underline' }}>Clear All</button>
-              )}
-            </div>
+          <hr style={{ borderColor: 'var(--border)', margin: '8px 0' }} />
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <div>
-                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '8px' }}>Sign-Up Bonus Status</label>
-                <Dropdown
-                  options={[
-                    { label: 'All Cards', value: 'all' },
-                    { label: 'Working Towards SUB', value: 'working_towards' },
-                    { label: 'No Active SUB', value: 'no_sub' }
-                  ]}
-                  value={subStatus}
-                  onChange={setSubStatus}
-                />
-              </div>
-
-              <div>
-                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '8px' }}>Issuers</label>
-                <div className="custom-scrollbar" style={{ maxHeight: '200px', overflowY: 'auto', paddingRight: '8px', border: '1px solid var(--border)', borderRadius: '6px', padding: '8px 12px', background: 'rgba(0,0,0,0.2)' }}>
-                  {issuers.map(issuer => (
-                    <TriStateCheckbox 
-                      key={issuer} 
-                      label={issuer} 
-                      state={selectedIssuers[issuer]} 
-                      onClick={() => toggleFilter(setSelectedIssuers, issuer)} 
-                    />
-                  ))}
-                </div>
-              </div>
-
-              <div>
-                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '8px' }}>Categories</label>
-                <div className="custom-scrollbar" style={{ maxHeight: '200px', overflowY: 'auto', paddingRight: '8px', border: '1px solid var(--border)', borderRadius: '6px', padding: '8px 12px', background: 'rgba(0,0,0,0.2)' }}>
-                  {commonCategories.map(c => (
-                    <TriStateCheckbox 
-                      key={c} 
-                      label={c} 
-                      state={selectedCategories[c]} 
-                      onClick={() => toggleFilter(setSelectedCategories, c)} 
-                    />
-                  ))}
-                </div>
-              </div>
-              
-              <hr style={{ borderColor: 'var(--border)', margin: '8px 0' }} />
-
-              <div>
-                <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', color: 'var(--primary)', textTransform: 'uppercase', marginBottom: '8px' }}>Tie-Breaker Behavior</label>
-                <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '8px', lineHeight: '1.4' }}>
-                  When multiple cards share the highest multiplier for a category, how should we break the tie?
-                </p>
-                <Dropdown
-                  options={[
-                    { label: 'Prioritize Highest SUB Goal', value: 'default' },
-                    { label: 'Maximize Unique SUB Cards', value: 'maximize_spread' }
-                  ]}
-                  value={tiebreaker}
-                  onChange={setTiebreaker}
-                />
-              </div>
-            </div>
+          <div>
+            <label style={{ display: 'block', fontSize: '0.75rem', fontWeight: 'bold', color: 'var(--primary)', textTransform: 'uppercase', marginBottom: '8px' }}>Tie-Breaker Behavior</label>
+            <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '8px', lineHeight: '1.4' }}>
+              When multiple cards share the highest multiplier for a category, how should we break the tie?
+            </p>
+            <Dropdown
+              options={[
+                { label: 'Prioritize Highest SUB Goal', value: 'default' },
+                { label: 'Maximize Unique SUB Cards', value: 'maximize_spread' }
+              ]}
+              value={tiebreaker}
+              onChange={setTiebreaker}
+            />
           </div>
-
-          {/* MAIN CONTENT (Recommender) */}
-          <div style={{ flex: '1 1 500px', minWidth: '400px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
-              <h2 style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: 0 }}>
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" color="#fbbf24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                Card Recommender
-              </h2>
-              <div style={{ position: 'relative', width: '250px' }}>
-                <svg style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                <input
-                  type="text"
-                  placeholder="Search Categories..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="input-glass"
-                  style={{ width: '100%', paddingLeft: '32px' }}
-                />
-              </div>
+        </SidebarFilter>
+      }
+      rightSidebar={flexibleCategories.length > 0 ? {
+        style: { background: 'rgba(59, 130, 246, 0.05)', borderColor: 'rgba(59, 130, 246, 0.2)' },
+        content: (
+          <>
+            <h3 style={{ marginBottom: '16px', color: '#60a5fa', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem' }}>
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+              Special Categories
+            </h3>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              {flexibleCategories.map((flex, idx) => (
+                <div key={idx} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <div style={{ fontSize: '0.875rem' }}>
+                    <strong style={{ color: 'var(--text-main)' }}>{flex.card.name}</strong> 
+                    <span style={{ color: 'var(--text-muted)', display: 'block', marginTop: '2px' }}>{flex.baseName} - {flex.multiplier}x</span>
+                    {flex.isAutomated && <span style={{ display: 'inline-block', marginTop: '4px', fontSize: '0.75rem', color: '#10b981', fontWeight: 'bold' }}>⚡ Auto-Scheduled</span>}
+                  </div>
+                  {flex.isAutomated ? (
+                    <div style={{ background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)', padding: '8px 12px', borderRadius: '8px', color: '#10b981', fontSize: '0.875rem', fontWeight: 'bold' }}>
+                      {flex.currentValue || 'No Category Scheduled'}
+                    </div>
+                  ) : (
+                    <Dropdown
+                      options={commonCategories}
+                      value={flex.currentValue}
+                      onChange={(val) => handleUpdateFlexibleCategory(flex.card, flex.catIndex, flex.baseName, val)}
+                      placeholder="-- Select Category --"
+                    />
+                  )}
+                </div>
+              ))}
             </div>
+          </>
+        )
+      } : null}
+    >
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+        <h2 style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: 0 }}>
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" color="#fbbf24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+          Card Recommender
+        </h2>
+        <div style={{ position: 'relative', width: '250px' }}>
+          <svg style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <input
+            type="text"
+            placeholder="Search Categories..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="input-glass"
+            style={{ width: '100%', paddingLeft: '32px' }}
+          />
+        </div>
+      </div>
+
             
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '16px', alignItems: 'start' }}>
               {categoryGroups.length === 0 && !everythingGroup.length && (
@@ -513,43 +510,6 @@ export default function Dashboard() {
                 );
               })()}
             </div>
-          </div>
-
-          {/* RIGHT SIDEBAR (Special Categories) */}
-          {flexibleCategories.length > 0 && (
-            <div className="glass-panel" style={{ flex: '0 0 320px', position: 'sticky', top: '24px', width: '100%', background: 'rgba(59, 130, 246, 0.05)', borderColor: 'rgba(59, 130, 246, 0.2)' }}>
-              <h3 style={{ marginBottom: '16px', color: '#60a5fa', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem' }}>
-                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                Special Categories
-              </h3>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                {flexibleCategories.map((flex, idx) => (
-                  <div key={idx} style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <div style={{ fontSize: '0.875rem' }}>
-                      <strong style={{ color: 'var(--text-main)' }}>{flex.card.name}</strong> 
-                      <span style={{ color: 'var(--text-muted)', display: 'block', marginTop: '2px' }}>{flex.baseName} - {flex.multiplier}x</span>
-                      {flex.isAutomated && <span style={{ display: 'inline-block', marginTop: '4px', fontSize: '0.75rem', color: '#10b981', fontWeight: 'bold' }}>⚡ Auto-Scheduled</span>}
-                    </div>
-                    {flex.isAutomated ? (
-                      <div style={{ background: 'rgba(16, 185, 129, 0.1)', border: '1px solid rgba(16, 185, 129, 0.3)', padding: '8px 12px', borderRadius: '8px', color: '#10b981', fontSize: '0.875rem', fontWeight: 'bold' }}>
-                        {flex.currentValue || 'No Category Scheduled'}
-                      </div>
-                    ) : (
-                      <Dropdown
-                        options={commonCategories}
-                        value={flex.currentValue}
-                        onChange={(val) => handleUpdateFlexibleCategory(flex.card, flex.catIndex, flex.baseName, val)}
-                        placeholder="-- Select Category --"
-                      />
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-        </div>
-      )}
-    </main>
+    </PageLayout>
   );
 }

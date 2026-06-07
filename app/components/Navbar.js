@@ -11,6 +11,7 @@ export default function Navbar() {
     { name: 'Credits', path: '/credits' },
     { name: 'SUB Tracker', path: '/subs' },
     { name: 'Cards', path: '/accounts' },
+    { name: 'Velocity', path: '/velocity' },
     { name: 'Data', path: '/data' },
   ];
 

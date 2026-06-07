@@ -6,7 +6,7 @@ import path from 'path';
 
 function syncToJson() {
   const templates = db.prepare(`
-    SELECT t.id, t.name, t.color, t.productUrl, t.quarterlyCategories, i.name as issuer
+    SELECT t.id, t.name, t.color, t.productUrl, t.quarterlyCategories, t.annualFee, i.name as issuer
     FROM templates t
     LEFT JOIN issuers i ON t.issuerId = i.id
     ORDER BY t.name ASC
@@ -47,7 +47,7 @@ function syncToJson() {
 
 export async function GET() {
   const templates = db.prepare(`
-    SELECT t.id, t.name, t.color, t.productUrl, t.quarterlyCategories, i.name as issuer
+    SELECT t.id, t.name, t.color, t.productUrl, t.quarterlyCategories, t.annualFee, i.name as issuer
     FROM templates t
     LEFT JOIN issuers i ON t.issuerId = i.id
     ORDER BY t.name ASC
@@ -95,7 +95,7 @@ export async function POST(req) {
   const quarterlyCategories = t.quarterlyCategories ? JSON.stringify(t.quarterlyCategories) : null;
 
   const tx = db.transaction(() => {
-    db.prepare('INSERT OR REPLACE INTO templates (id, name, issuerId, color, productUrl, quarterlyCategories) VALUES (?, ?, ?, ?, ?, ?)').run(id, t.name, issuerId, t.color || '#4a61bd', productUrl, quarterlyCategories);
+    db.prepare('INSERT OR REPLACE INTO templates (id, name, issuerId, color, productUrl, quarterlyCategories, annualFee) VALUES (?, ?, ?, ?, ?, ?, ?)').run(id, t.name, issuerId, t.color || '#4a61bd', productUrl, quarterlyCategories, parseFloat(t.annualFee) || 0);
     db.prepare('DELETE FROM template_categories WHERE templateId = ?').run(id);
     db.prepare('DELETE FROM template_intro_bonuses WHERE templateId = ?').run(id);
     db.prepare('DELETE FROM template_credits WHERE templateId = ?').run(id);
@@ -128,8 +128,8 @@ export async function POST(req) {
     }
 
     const insertCredit = db.prepare(`
-      INSERT INTO template_credits (id, templateId, name, amount, allowPartial, frequency, resetType, resetAnchorDate)
-      VALUES (@id, @templateId, @name, @amount, @allowPartial, @frequency, @resetType, @resetAnchorDate)
+      INSERT INTO template_credits (id, templateId, name, amount, allowPartial, frequency, resetType, resetAnchorDate, type)
+      VALUES (@id, @templateId, @name, @amount, @allowPartial, @frequency, @resetType, @resetAnchorDate, @type)
     `);
 
     for (const credit of (t.credits || [])) {
@@ -141,7 +141,8 @@ export async function POST(req) {
         allowPartial: credit.allowPartial ? 1 : 0,
         frequency: credit.frequency,
         resetType: credit.resetType || 'Calendar',
-        resetAnchorDate: credit.resetAnchorDate || null
+        resetAnchorDate: credit.resetAnchorDate || null,
+        type: credit.type || 'General'
       });
     }
   });

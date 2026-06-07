@@ -1,6 +1,9 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Dropdown from '@/components/Dropdown';
+import PageLayout from '@/components/PageLayout';
+import SidebarFilter, { FilterSection } from '@/components/SidebarFilter';
+import TriStateCheckbox from '@/components/TriStateCheckbox';
 
 function getCurrentPeriod(credit, date = new Date()) {
   const y = date.getFullYear();
@@ -77,6 +80,29 @@ export default function CreditsPage() {
   const [usages, setUsages] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const [searchQuery, setSearchQuery] = useState('');
+  const [statusFilter, setStatusFilter] = useState('all');
+  const [selectedFrequencies, setSelectedFrequencies] = useState({});
+  const [selectedTypes, setSelectedTypes] = useState({});
+
+  const toggleFilter = (setFn, item) => {
+    setFn(prev => {
+      const current = prev[item];
+      if (!current) return { ...prev, [item]: 'include' };
+      if (current === 'include') return { ...prev, [item]: 'exclude' };
+      const next = { ...prev };
+      delete next[item];
+      return next;
+    });
+  };
+
+  const handleClearFilters = () => {
+    setSearchQuery('');
+    setStatusFilter('all');
+    setSelectedFrequencies({});
+    setSelectedTypes({});
+  };
+
   const fetchData = async () => {
     try {
       const [cardsRes, usageRes] = await Promise.all([
@@ -138,55 +164,136 @@ export default function CreditsPage() {
     }
   };
 
+  const { filteredGrouped, uniqueTypes, uniqueFrequencies, hasAnyCredits } = useMemo(() => {
+    const allCredits = [];
+    cards.forEach(card => {
+      if (card.credits && Array.isArray(card.credits)) {
+        card.credits.forEach(credit => {
+          allCredits.push({ ...credit, card });
+        });
+      }
+    });
+
+    const grouped = {
+      'Monthly': [],
+      'Quarterly': [],
+      'Semi-Annual': [],
+      'Annual': [],
+      'Every 4 Years': []
+    };
+
+    allCredits.forEach(credit => {
+      if (!grouped[credit.frequency]) grouped[credit.frequency] = [];
+      const period = getCurrentPeriod(credit);
+      const usage = usages.find(u => u.creditId === credit.id && u.period === period);
+      grouped[credit.frequency].push({
+        ...credit,
+        currentPeriod: period,
+        usage: usage || { usedAmount: 0, isFullyUsed: false }
+      });
+    });
+
+    const uTypes = [...new Set(allCredits.map(c => c.type || 'General'))].sort();
+    const uFreqs = [...new Set(allCredits.map(c => c.frequency))].sort();
+
+    const res = {};
+    const includeFreq = Object.keys(selectedFrequencies).filter(k => selectedFrequencies[k] === 'include');
+    const excludeFreq = Object.keys(selectedFrequencies).filter(k => selectedFrequencies[k] === 'exclude');
+    const includeType = Object.keys(selectedTypes).filter(k => selectedTypes[k] === 'include');
+    const excludeType = Object.keys(selectedTypes).filter(k => selectedTypes[k] === 'exclude');
+
+    Object.keys(grouped).forEach(freq => {
+      res[freq] = grouped[freq].filter(item => {
+        if (searchQuery && !item.name.toLowerCase().includes(searchQuery.toLowerCase()) && !item.card.name.toLowerCase().includes(searchQuery.toLowerCase())) return false;
+        
+        if (statusFilter === 'used' && !item.usage.isFullyUsed) return false;
+        if (statusFilter === 'unused' && item.usage.isFullyUsed) return false;
+
+        if (includeFreq.length > 0 && !includeFreq.includes(item.frequency)) return false;
+        if (excludeFreq.length > 0 && excludeFreq.includes(item.frequency)) return false;
+
+        const cType = item.type || 'General';
+        if (includeType.length > 0 && !includeType.includes(cType)) return false;
+        if (excludeType.length > 0 && excludeType.includes(cType)) return false;
+
+        return true;
+      });
+    });
+    
+    return { filteredGrouped: res, uniqueTypes: uTypes, uniqueFrequencies: uFreqs, hasAnyCredits: allCredits.length > 0 };
+  }, [cards, usages, searchQuery, statusFilter, selectedFrequencies, selectedTypes]);
+
   if (loading) return <div style={{ padding: '2rem' }}>Loading credits...</div>;
 
-  const allCredits = [];
-  cards.forEach(card => {
-    if (card.credits && Array.isArray(card.credits)) {
-      card.credits.forEach(credit => {
-        allCredits.push({ ...credit, card });
-      });
-    }
-  });
-
-  const grouped = {
-    'Monthly': [],
-    'Quarterly': [],
-    'Semi-Annual': [],
-    'Annual': [],
-    'Every 4 Years': []
-  };
-
-  allCredits.forEach(credit => {
-    if (!grouped[credit.frequency]) grouped[credit.frequency] = [];
-    
-    const period = getCurrentPeriod(credit);
-    const usage = usages.find(u => u.creditId === credit.id && u.period === period);
-    
-    grouped[credit.frequency].push({
-      ...credit,
-      currentPeriod: period,
-      usage: usage || { usedAmount: 0, isFullyUsed: false }
-    });
-  });
-
-  const hasAnyCredits = allCredits.length > 0;
-
   return (
-    <main>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
-        <h1 className="page-title" style={{ marginBottom: 0 }}>Coupons & Credits</h1>
-      </div>
-
-      {!hasAnyCredits ? (
+    <PageLayout
+      header={
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+          <h1 className="page-title" style={{ marginBottom: 0 }}>Coupons & Credits</h1>
+        </div>
+      }
+      emptyState={!hasAnyCredits ? (
         <div style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}>
           No credits defined. Go to the Cards tab to edit a card and add coupons or statement credits!
         </div>
-      ) : (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-          {Object.keys(grouped).map(freq => {
-            const groupCredits = grouped[freq];
-            if (groupCredits.length === 0) return null;
+      ) : null}
+      leftSidebar={
+        <SidebarFilter 
+          title="Filters" 
+          onClearAll={handleClearFilters} 
+          showClearAll={Object.keys(selectedFrequencies).length > 0 || Object.keys(selectedTypes).length > 0 || statusFilter !== 'all' || searchQuery}
+        >
+          <FilterSection title="Search">
+            <input
+              type="text"
+              placeholder="Search credits..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="input-glass"
+              style={{ width: '100%', marginBottom: '8px' }}
+            />
+          </FilterSection>
+
+          <FilterSection title="Status">
+            <Dropdown
+              options={[
+                { label: 'All', value: 'all' },
+                { label: 'Unused', value: 'unused' },
+                { label: 'Used', value: 'used' }
+              ]}
+              value={statusFilter}
+              onChange={setStatusFilter}
+            />
+          </FilterSection>
+
+          <FilterSection title="Frequency" isScrollable>
+            {uniqueFrequencies.map(f => (
+              <TriStateCheckbox 
+                key={f} 
+                label={f} 
+                state={selectedFrequencies[f]} 
+                onClick={() => toggleFilter(setSelectedFrequencies, f)} 
+              />
+            ))}
+          </FilterSection>
+
+          <FilterSection title="Type" isScrollable>
+            {uniqueTypes.map(t => (
+              <TriStateCheckbox 
+                key={t} 
+                label={t} 
+                state={selectedTypes[t]} 
+                onClick={() => toggleFilter(setSelectedTypes, t)} 
+              />
+            ))}
+          </FilterSection>
+        </SidebarFilter>
+      }
+    >
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
+        {Object.keys(filteredGrouped).map(freq => {
+          const groupCredits = filteredGrouped[freq];
+          if (groupCredits.length === 0) return null;
 
             return (
               <div key={freq}>
@@ -252,7 +359,6 @@ export default function CreditsPage() {
             );
           })}
         </div>
-      )}
-    </main>
+    </PageLayout>
   );
 }

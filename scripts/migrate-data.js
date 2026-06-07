@@ -40,12 +40,12 @@ if (fs.existsSync(templatesPath)) {
   
   const insertIssuer = db.prepare('INSERT OR IGNORE INTO issuers (id, name) VALUES (?, ?)');
   const getIssuer = db.prepare('SELECT id FROM issuers WHERE name = ?');
-  const insertTemplate = db.prepare('INSERT OR REPLACE INTO templates (id, name, issuerId, color, productUrl, quarterlyCategories) VALUES (?, ?, ?, ?, ?, ?)');
+  const insertTemplate = db.prepare('INSERT OR REPLACE INTO templates (id, name, issuerId, color, productUrl, quarterlyCategories, annualFee) VALUES (?, ?, ?, ?, ?, ?, ?)');
   const insertTemplateCategory = db.prepare('INSERT INTO template_categories (id, templateId, categoryId, multiplier) VALUES (?, ?, ?, ?)');
   
   const insertCredit = db.prepare(`
-    INSERT INTO template_credits (id, templateId, name, amount, allowPartial, frequency, resetType, resetAnchorDate)
-    VALUES (@id, @templateId, @name, @amount, @allowPartial, @frequency, @resetType, @resetAnchorDate)
+    INSERT INTO template_credits (id, templateId, name, amount, allowPartial, frequency, resetType, resetAnchorDate, type)
+    VALUES (@id, @templateId, @name, @amount, @allowPartial, @frequency, @resetType, @resetAnchorDate, @type)
   `);
 
   const insertBonus = db.prepare(`
@@ -70,7 +70,8 @@ if (fs.existsSync(templatesPath)) {
         issuerId, 
         t.color || '#4a61bd', 
         t.productUrl || null, 
-        t.quarterlyCategories ? JSON.stringify(t.quarterlyCategories) : null
+        t.quarterlyCategories ? JSON.stringify(t.quarterlyCategories) : null,
+        t.annualFee || 0
       );
       
       // Clear existing child records
@@ -100,7 +101,8 @@ if (fs.existsSync(templatesPath)) {
             allowPartial: credit.allowPartial ? 1 : 0,
             frequency: credit.frequency || 'Annual',
             resetType: credit.resetType || 'Calendar',
-            resetAnchorDate: credit.resetAnchorDate || null
+            resetAnchorDate: credit.resetAnchorDate || null,
+            type: credit.type || 'General'
           });
         }
       }

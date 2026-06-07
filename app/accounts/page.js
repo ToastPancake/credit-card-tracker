@@ -1,7 +1,11 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Dropdown from '@/components/Dropdown';
 import CardList from '@/components/CardList';
+import PageLayout from '@/components/PageLayout';
+import SidebarFilter, { FilterSection } from '@/components/SidebarFilter';
+import TriStateCheckbox from '@/components/TriStateCheckbox';
+import Modal from '@/components/Modal';
 
 const BONUS_TYPES = [
   { label: 'Standard SUB', value: 'SpendReward' },
@@ -31,8 +35,57 @@ export default function AccountsPage() {
   const [formData, setFormData] = useState({
     name: '', issuer: '', actualAccountId: '', productUrl: '',
     color: '#4a61bd', categories: [], introBonuses: [], credits: [],
-    quarterlyCategories: { Q1: [], Q2: [], Q3: [], Q4: [] }
+    quarterlyCategories: { Q1: [], Q2: [], Q3: [], Q4: [] }, annualFee: 0
   });
+
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedIssuers, setSelectedIssuers] = useState({});
+  const [selectedCategories, setSelectedCategories] = useState({});
+  const [annualFeeFilter, setAnnualFeeFilter] = useState('all');
+
+  const toggleFilter = (setFn, item) => {
+    setFn(prev => {
+      const current = prev[item];
+      if (!current) return { ...prev, [item]: 'include' };
+      if (current === 'include') return { ...prev, [item]: 'exclude' };
+      const next = { ...prev };
+      delete next[item];
+      return next;
+    });
+  };
+
+  const handleClearFilters = () => {
+    setSearchQuery('');
+    setSelectedIssuers({});
+    setSelectedCategories({});
+    setAnnualFeeFilter('all');
+  };
+
+  const filteredCards = useMemo(() => {
+    let filtered = cards;
+    if (searchQuery) {
+      filtered = filtered.filter(c => c.name.toLowerCase().includes(searchQuery.toLowerCase()));
+    }
+    const includeIssuers = Object.keys(selectedIssuers).filter(k => selectedIssuers[k] === 'include');
+    const excludeIssuers = Object.keys(selectedIssuers).filter(k => selectedIssuers[k] === 'exclude');
+    if (includeIssuers.length > 0) filtered = filtered.filter(c => includeIssuers.includes(c.issuer));
+    if (excludeIssuers.length > 0) filtered = filtered.filter(c => !excludeIssuers.includes(c.issuer));
+
+    const includeCats = Object.keys(selectedCategories).filter(k => selectedCategories[k] === 'include');
+    const excludeCats = Object.keys(selectedCategories).filter(k => selectedCategories[k] === 'exclude');
+    if (includeCats.length > 0) {
+      filtered = filtered.filter(c => c.categories?.some(cat => includeCats.includes(cat.categoryName)));
+    }
+    if (excludeCats.length > 0) {
+      filtered = filtered.filter(c => !c.categories?.some(cat => excludeCats.includes(cat.categoryName)));
+    }
+
+    if (annualFeeFilter === 'no_fee') filtered = filtered.filter(c => !c.annualFee || c.annualFee === 0);
+    if (annualFeeFilter === 'has_fee') filtered = filtered.filter(c => c.annualFee > 0);
+
+    return filtered;
+  }, [cards, searchQuery, selectedIssuers, selectedCategories, annualFeeFilter]);
+
 
   const fetchData = () => {
     fetch('/api/cards').then(res => res.json()).then(data => { if (Array.isArray(data)) setCards(data); });
@@ -68,7 +121,8 @@ export default function AccountsPage() {
         productUrl: template.productUrl || '',
         quarterlyCategories: template.quarterlyCategories || { Q1: [], Q2: [], Q3: [], Q4: [] },
         categories: [...template.categories],
-        credits: template.credits ? [...template.credits] : []
+        credits: template.credits ? [...template.credits] : [],
+        annualFee: template.annualFee || 0
       }));
     }
   };
@@ -103,7 +157,7 @@ export default function AccountsPage() {
   const addCredit = () => {
     setFormData(prev => ({
       ...prev,
-      credits: [...prev.credits, { name: '', amount: 0, allowPartial: false, frequency: 'Annual', resetType: 'Calendar', resetAnchorDate: '' }]
+      credits: [...prev.credits, { name: '', amount: 0, allowPartial: false, frequency: 'Annual', resetType: 'Calendar', resetAnchorDate: '', type: 'General' }]
     }));
   };
   const updateCredit = (index, field, value) => {
@@ -126,6 +180,7 @@ export default function AccountsPage() {
       name: card.name || '', issuer: card.issuer || '', actualAccountId: card.actualAccountId || '', productUrl: card.productUrl || '',
       color: card.color || '#4a61bd', categories: card.categories || [],
       quarterlyCategories: card.quarterlyCategories || { Q1: [], Q2: [], Q3: [], Q4: [] },
+      annualFee: card.annualFee || 0,
       credits: card.credits || [],
       introBonuses: card.introBonuses ? card.introBonuses.map(ib => {
          let subRewardAmount = '';
@@ -156,7 +211,7 @@ export default function AccountsPage() {
   const cancelEdit = () => {
     setEditingId(null);
     setShowForm(false);
-    setFormData({ name: '', issuer: '', actualAccountId: '', productUrl: '', color: '#4a61bd', categories: [], introBonuses: [], credits: [], quarterlyCategories: { Q1: [], Q2: [], Q3: [], Q4: [] } });
+    setFormData({ name: '', issuer: '', actualAccountId: '', productUrl: '', color: '#4a61bd', categories: [], introBonuses: [], credits: [], quarterlyCategories: { Q1: [], Q2: [], Q3: [], Q4: [] }, annualFee: 0 });
   };
 
   const handleAddSubmit = async (e) => {
@@ -196,15 +251,68 @@ export default function AccountsPage() {
   const categoryOptions = commonCategories.map(c => ({ label: c.name, value: c.id }));
 
   return (
-    <main>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '32px' }}>
-        <h1 className="page-title" style={{ marginBottom: 0 }}>Cards</h1>
-      </div>
+    <PageLayout
+      header={
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+          <h1 className="page-title" style={{ marginBottom: 0 }}>Cards</h1>
+        </div>
+      }
+      leftSidebar={
+        <SidebarFilter 
+          title="Filters" 
+          onClearAll={handleClearFilters} 
+          showClearAll={Object.keys(selectedIssuers).length > 0 || Object.keys(selectedCategories).length > 0 || annualFeeFilter !== 'all' || searchQuery}
+        >
+          <FilterSection title="Search">
+            <input
+              type="text"
+              placeholder="Search by name..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="input-glass"
+              style={{ width: '100%', marginBottom: '8px' }}
+            />
+          </FilterSection>
 
-      {showForm && (
-        <form className="glass-panel" onSubmit={handleAddSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px', maxWidth: '800px', marginBottom: '40px', border: '1px solid var(--primary)' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-            <h3 style={{ margin: 0 }}>{editingId ? 'Edit Card' : 'Add New Card'}</h3>
+          <FilterSection title="Annual Fee">
+            <Dropdown
+              options={[
+                { label: 'All Cards', value: 'all' },
+                { label: 'No Annual Fee', value: 'no_fee' },
+                { label: 'Has Annual Fee', value: 'has_fee' }
+              ]}
+              value={annualFeeFilter}
+              onChange={setAnnualFeeFilter}
+            />
+          </FilterSection>
+
+          <FilterSection title="Issuers" isScrollable>
+            {issuers.map(i => (
+              <TriStateCheckbox 
+                key={i.name} 
+                label={i.name} 
+                state={selectedIssuers[i.name]} 
+                onClick={() => toggleFilter(setSelectedIssuers, i.name)} 
+              />
+            ))}
+          </FilterSection>
+
+          <FilterSection title="Categories" isScrollable>
+            {commonCategories.map(c => (
+              <TriStateCheckbox 
+                key={c.name} 
+                label={c.name} 
+                state={selectedCategories[c.name]} 
+                onClick={() => toggleFilter(setSelectedCategories, c.name)} 
+              />
+            ))}
+          </FilterSection>
+        </SidebarFilter>
+      }
+    >
+      <Modal isOpen={showForm} onClose={cancelEdit} title={editingId ? 'Edit Card' : 'Add New Card'} maxWidth="800px">
+        <form onSubmit={handleAddSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '8px' }}>
             {!editingId && (
               <Dropdown 
                 options={templates.map(t => ({ label: t.name, value: t.id }))}
@@ -248,6 +356,10 @@ export default function AccountsPage() {
                   placeholder="-- No Account Linked --"
                 />
               )}
+            </div>
+            <div>
+              <label style={{ display: 'block', fontSize: '0.875rem', marginBottom: '8px', color: 'var(--text-muted)' }}>Annual Fee ($)</label>
+              <input className="input-glass" type="number" step="0.01" placeholder="e.g. 95" value={formData.annualFee} onChange={e => setFormData({...formData, annualFee: e.target.value})} />
             </div>
           </div>
             
@@ -320,6 +432,9 @@ export default function AccountsPage() {
                     </div>
                     <div style={{ width: '120px' }}>
                       <input className="input-glass" type="number" step="0.01" style={{ padding: '6px 10px', fontSize: '0.875rem' }} value={credit.amount} onChange={e => updateCredit(idx, 'amount', e.target.value)} placeholder="Value ($)" required />
+                    </div>
+                    <div style={{ width: '150px' }}>
+                      <Dropdown options={['General', 'Travel', 'Dining', 'Incidental', 'Streaming', 'Gaming', 'Shopping', 'Fitness']} value={credit.type || 'General'} onChange={val => updateCredit(idx, 'type', val)} />
                     </div>
                     <button type="button" onClick={() => removeCredit(idx)} style={{ background: 'transparent', border: 'none', color: '#ef4444', cursor: 'pointer', fontSize: '1.25rem', padding: '0 8px' }}>&times;</button>
                   </div>
@@ -439,17 +554,15 @@ export default function AccountsPage() {
             <button type="submit" className="btn-primary">{editingId ? 'Update Card' : 'Save Card'}</button>
           </div>
         </form>
-      )}
+      </Modal>
 
       <CardList 
-        cards={cards} 
+        cards={filteredCards} 
         actualAccounts={actualAccounts} 
         onEdit={handleEdit} 
         onDelete={handleDelete} 
-        showNoCardsMessage={!showForm}
-        noCardsMessage="No cards found. Add one to get started!"
-        headerRight={!showForm ? <button className="btn-primary" onClick={() => setShowForm(true)}>+ Add New Card</button> : null}
+        headerRight={<button className="btn-primary" onClick={() => setShowForm(true)}>+ Add New Card</button>}
       />
-    </main>
+    </PageLayout>
   );
 }

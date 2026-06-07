@@ -69,21 +69,51 @@ export default function CardList({
                   isSuperCondensed && <div style={{ fontSize: '0.875rem', color: 'var(--text-muted)' }}>{actualAcc ? actualAcc.name : 'Unlinked'}</div>
                 )}
                 
-                {isExpanded && (onEdit || onDelete) && (
-                  <div style={{ display: 'flex', gap: '12px' }}>
-                    {onEdit && <button className="btn-primary" style={{ background: 'var(--surface-hover)', padding: '6px 12px', fontSize: '0.875rem' }} onClick={(e) => { e.stopPropagation(); onEdit(card); }}>Edit</button>}
-                    {onDelete && <button className="btn-primary" style={{ background: '#ef4444', padding: '6px 12px', fontSize: '0.875rem' }} onClick={(e) => { e.stopPropagation(); onDelete(card.id); }}>Delete</button>}
-                  </div>
-                )}
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '8px' }}>
+                  {isExpanded && (onEdit || onDelete) && (
+                    <div style={{ display: 'flex', gap: '12px' }}>
+                      {onEdit && <button className="btn-primary" style={{ background: 'var(--surface-hover)', padding: '6px 12px', fontSize: '0.875rem' }} onClick={(e) => { e.stopPropagation(); onEdit(card); }}>Edit</button>}
+                      {onDelete && <button className="btn-primary" style={{ background: '#ef4444', padding: '6px 12px', fontSize: '0.875rem' }} onClick={(e) => { e.stopPropagation(); onDelete(card.id); }}>Delete</button>}
+                    </div>
+                  )}
+                  {isSuperCondensed && (
+                    <div style={{ 
+                      fontSize: '0.75rem', 
+                      fontWeight: 'bold', 
+                      color: card.annualFee > 0 ? '#f87171' : '#10b981', 
+                      background: card.annualFee > 0 ? 'rgba(248, 113, 113, 0.1)' : 'rgba(16, 185, 129, 0.1)',
+                      border: `1px solid ${card.annualFee > 0 ? 'rgba(248, 113, 113, 0.3)' : 'rgba(16, 185, 129, 0.3)'}`,
+                      padding: '4px 10px', 
+                      borderRadius: '12px'
+                    }}>
+                      {card.annualFee > 0 ? `$${card.annualFee} AF` : 'No AF'}
+                    </div>
+                  )}
+                </div>
               </div>
 
-              {(isCondensed || isExpanded) && card.categories && card.categories.length > 0 && (
-                <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: isExpanded ? '16px' : '12px' }}>
-                  {card.categories.map((c, i) => (
-                    <span key={i} style={{ background: 'rgba(255,255,255,0.1)', padding: '4px 10px', borderRadius: '12px', fontSize: '0.75rem' }}>
-                      {c.categoryName}: {c.multiplier}x
-                    </span>
-                  ))}
+              {!isSuperCondensed && (
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: isExpanded ? '16px' : '12px', minHeight: '28px' }}>
+                  <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', flex: 1 }}>
+                    {(card.categories && card.categories.length > 0) && card.categories.map((c, i) => (
+                      <span key={i} style={{ background: 'rgba(255,255,255,0.1)', padding: '4px 10px', borderRadius: '12px', fontSize: '0.75rem' }}>
+                        {c.categoryName}: {c.multiplier}x
+                      </span>
+                    ))}
+                  </div>
+                  <div style={{ 
+                    fontSize: '0.75rem', 
+                    fontWeight: 'bold', 
+                    color: card.annualFee > 0 ? '#f87171' : '#10b981', 
+                    background: card.annualFee > 0 ? 'rgba(248, 113, 113, 0.1)' : 'rgba(16, 185, 129, 0.1)',
+                    border: `1px solid ${card.annualFee > 0 ? 'rgba(248, 113, 113, 0.3)' : 'rgba(16, 185, 129, 0.3)'}`,
+                    padding: '4px 10px', 
+                    borderRadius: '12px',
+                    marginLeft: '16px',
+                    whiteSpace: 'nowrap'
+                  }}>
+                    {card.annualFee > 0 ? `$${card.annualFee} AF` : 'No AF'}
+                  </div>
                 </div>
               )}
 
@@ -94,6 +124,8 @@ export default function CardList({
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                       <div><span style={{ color: 'var(--text-muted)' }}>Issuer: </span>{card.issuer}</div>
                       
+                      <div><span style={{ color: 'var(--text-muted)' }}>Annual Fee: </span><strong style={{ color: 'var(--text-main)' }}>{card.annualFee > 0 ? `$${card.annualFee}` : '$0'}</strong></div>
+                      
                       {/* Quick Links */}
                       <div>
                         <div style={{ color: 'var(--text-muted)', marginBottom: '4px' }}>Quick Links:</div>
@@ -101,6 +133,10 @@ export default function CardList({
                           <a href={`https://www.doctorofcredit.com/?s=${encodeURIComponent(card.name)}`} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: 'rgba(245, 158, 11, 0.1)', color: '#fbbf24', padding: '4px 8px', borderRadius: '4px', textDecoration: 'none', border: '1px solid rgba(245, 158, 11, 0.3)', fontSize: '0.75rem' }}>
                             <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                             Search DoC
+                          </a>
+                          <a href={`https://www.uscreditcardguide.com/en/?s=${encodeURIComponent(card.name)}`} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: 'rgba(168, 85, 247, 0.1)', color: '#c084fc', padding: '4px 8px', borderRadius: '4px', textDecoration: 'none', border: '1px solid rgba(168, 85, 247, 0.3)', fontSize: '0.75rem' }}>
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                            Search USCCG
                           </a>
                           {card.issuerLoginUrl && (
                             <a href={card.issuerLoginUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', background: 'rgba(59, 130, 246, 0.1)', color: '#60a5fa', padding: '4px 8px', borderRadius: '4px', textDecoration: 'none', border: '1px solid rgba(59, 130, 246, 0.3)', fontSize: '0.75rem' }}>
