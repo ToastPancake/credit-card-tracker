@@ -13,7 +13,9 @@ services:
       - ./data:/app/data
     environment:
       - NODE_ENV=production
-      # You can specify your credentials directly here instead of using a .env file:
+      # IMPORTANT: Do NOT hardcode credentials here if committing to GitHub!
+      # Create a .env file on your Oracle VM in the same directory as this docker-compose.yml
+      # Docker automatically reads the .env file.
       # - ACTUAL_SERVER_URL=http://actual-server:5006
       # - ACTUAL_PASSWORD=your_password
       # - ACTUAL_SYNC_ID=your_sync_id
