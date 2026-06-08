@@ -1,4 +1,4 @@
-version: '3.8'
+# docker-compose.yml
 
 services:
   cc-tracker:
@@ -11,15 +11,12 @@ services:
       # We mount a local 'data' folder to the container's '/app/data'
       # The app will store tracker.db and .actual-data inside this folder
       - ./data:/app/data
+      - ./.env.local:/app/.env.local
     environment:
       - NODE_ENV=production
       # IMPORTANT: Do NOT hardcode credentials here if committing to GitHub!
-      # Create a .env file on your Oracle VM in the same directory as this docker-compose.yml
-      # Docker automatically reads the .env file.
-      # - ACTUAL_SERVER_URL=http://actual-server:5006
-      # - ACTUAL_PASSWORD=your_password
-      # - ACTUAL_SYNC_ID=your_sync_id
-      # - ACTUAL_E2E_PASSWORD=your_e2e_password
+      # Instead, place your ACTUAL_PASSWORD and ACTUAL_SERVER_URL inside a `.env.local` file.
+      # The `.env.local` file is automatically mounted and parsed.
     networks:
       - actual-network  # Connects this container to the ActualBudget network
 

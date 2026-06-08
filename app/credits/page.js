@@ -111,8 +111,8 @@ export default function CreditsPage() {
       ]);
       const cardsData = await cardsRes.json();
       const usageData = await usageRes.json();
-      setCards(cardsData);
-      setUsages(usageData);
+      setCards(Array.isArray(cardsData) ? cardsData : []);
+      setUsages(Array.isArray(usageData) ? usageData : []);
     } catch (err) {
       console.error(err);
     } finally {

@@ -9,3 +9,5 @@ README.md
 *.db
 *.db-wal
 *.db-shm
+.env
+.env.local
