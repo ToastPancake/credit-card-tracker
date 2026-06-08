@@ -13,13 +13,17 @@ services:
       - ./data:/app/data
     environment:
       - NODE_ENV=production
+      # You can specify your credentials directly here instead of using a .env file:
       # - ACTUAL_SERVER_URL=http://actual-server:5006
       # - ACTUAL_PASSWORD=your_password
       # - ACTUAL_SYNC_ID=your_sync_id
       # - ACTUAL_E2E_PASSWORD=your_e2e_password
-    # networks:
-    #   - actual-network  # Uncomment if ActualBudget is on a specific docker network
+    networks:
+      - actual-network  # Connects this container to the ActualBudget network
 
-# networks:
-#   actual-network:
-#     external: true
+# Define the external network that ActualBudget is already running on
+networks:
+  actual-network:
+    external: true
+    # IMPORTANT: Change "actual-network" to the actual name of your ActualBudget Docker network!
+    name: your_actual_budget_network_name_here
