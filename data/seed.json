@@ -67,28 +67,38 @@
     {
       "id": "723d223b-116a-4299-a77f-7bd39fe847dd",
       "name": "Highest Eligible Category"
+    },
+    {
+      "id": "c87dd58f-1170-46ce-97f4-909068b9afb3",
+      "name": "Drugstores"
+    },
+    {
+      "id": "f63489c9-88ee-44b6-b53a-1e5a7c35a8b0",
+      "name": "Home Improvement"
+    },
+    {
+      "id": "2abd3c59-5346-4910-8d3d-8d4436eaa025",
+      "name": "Flights"
+    },
+    {
+      "id": "158a9ca0-acf4-45d5-ae19-3c988e19a9c3",
+      "name": "Transit"
+    },
+    {
+      "id": "2522c46e-74ef-47e6-8371-bc49c0de84f9",
+      "name": "Gas"
     }
   ],
   "templates": [
-    {
-      "id": "template_capone_savor",
-      "name": "Capital One Savor",
-      "issuerId": "5c8a6940-88be-4457-a004-5c8e048f279b",
-      "color": "#d97706",
-      "productUrl": null,
-      "quarterlyCategories": null,
-      "annualFee": 95,
-      "isBusiness": 0
-    },
     {
       "id": "template_citi_custom_cash",
       "name": "Citi Custom Cash",
       "issuerId": "e29cd1ac-70c0-4d8b-9523-d75944b7eda4",
       "color": "#059669",
       "productUrl": null,
-      "quarterlyCategories": null,
       "annualFee": 0,
-      "isBusiness": 0
+      "isBusiness": 0,
+      "quarterlyCategories": null
     },
     {
       "id": "template_discover_it",
@@ -96,9 +106,9 @@
       "issuerId": "54482629-43d9-41f3-9c4f-b2f23904fb22",
       "color": "#ea580c",
       "productUrl": null,
-      "quarterlyCategories": null,
       "annualFee": 0,
-      "isBusiness": 0
+      "isBusiness": 0,
+      "quarterlyCategories": null
     },
     {
       "id": "template_wf_active_cash",
@@ -106,54 +116,22 @@
       "issuerId": "6be3cfad-bbe4-4576-bff8-7fd503c89805",
       "color": "#b91c1c",
       "productUrl": null,
-      "quarterlyCategories": null,
       "annualFee": 0,
-      "isBusiness": 0
+      "isBusiness": 0,
+      "quarterlyCategories": null
+    },
+    {
+      "id": "template_capone_savor",
+      "name": "Capital One Savor",
+      "issuerId": "5c8a6940-88be-4457-a004-5c8e048f279b",
+      "color": "#d97706",
+      "productUrl": null,
+      "annualFee": 0,
+      "isBusiness": 0,
+      "quarterlyCategories": "{\"Q1\":[],\"Q2\":[],\"Q3\":[],\"Q4\":[]}"
     }
   ],
   "template_categories": [
-    {
-      "id": "120bc50a-7481-4fb7-b2a3-753fe1add47b",
-      "templateId": "template_capone_savor",
-      "categoryId": "046383df-b245-4701-91ee-3325df957783",
-      "multiplier": 8
-    },
-    {
-      "id": "1b4515a0-e808-4c2e-ae31-49696aa14c1c",
-      "templateId": "template_capone_savor",
-      "categoryId": "3d6a8d52-2556-47fa-aa47-e1458c299c8f",
-      "multiplier": 5
-    },
-    {
-      "id": "e9fd957d-6a86-4299-917a-044f6735287f",
-      "templateId": "template_capone_savor",
-      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
-      "multiplier": 3
-    },
-    {
-      "id": "8970e55d-966d-42f7-b7f4-390edc224d3e",
-      "templateId": "template_capone_savor",
-      "categoryId": "98b9cb10-cca4-48b9-b4b3-1ce5f75bb706",
-      "multiplier": 3
-    },
-    {
-      "id": "f1ca4bd1-95d5-46d8-952b-79e5ddacd36d",
-      "templateId": "template_capone_savor",
-      "categoryId": "aa36bfbf-cc4b-4c23-a8a5-9451586f8bd7",
-      "multiplier": 3
-    },
-    {
-      "id": "a780b81d-4e53-407a-802e-53a6a8f90493",
-      "templateId": "template_capone_savor",
-      "categoryId": "3b2145d5-f851-4a9f-b64c-15774bd93afa",
-      "multiplier": 3
-    },
-    {
-      "id": "b7dc4277-cfdd-44c0-a538-0e131e1f4fd0",
-      "templateId": "template_capone_savor",
-      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
-      "multiplier": 1
-    },
     {
       "id": "5ca93f1c-b568-485d-89b5-8d0b887a3b3e",
       "templateId": "template_citi_custom_cash",
@@ -183,6 +161,48 @@
       "templateId": "template_wf_active_cash",
       "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
       "multiplier": 2
+    },
+    {
+      "id": "53f55d4a-ea71-4660-b62e-e72003850044",
+      "templateId": "template_capone_savor",
+      "categoryId": "046383df-b245-4701-91ee-3325df957783",
+      "multiplier": 8
+    },
+    {
+      "id": "343d8987-cda1-44a9-b3b0-e3c4adcfa0d5",
+      "templateId": "template_capone_savor",
+      "categoryId": "3d6a8d52-2556-47fa-aa47-e1458c299c8f",
+      "multiplier": 5
+    },
+    {
+      "id": "f7b5c20c-7e35-4ed0-8c08-b5b0361f262f",
+      "templateId": "template_capone_savor",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 3
+    },
+    {
+      "id": "de28d75b-53f6-4488-93fc-12445a7dc739",
+      "templateId": "template_capone_savor",
+      "categoryId": "98b9cb10-cca4-48b9-b4b3-1ce5f75bb706",
+      "multiplier": 3
+    },
+    {
+      "id": "8d8f3a37-f0de-4fdc-ab03-27f77c9b9af1",
+      "templateId": "template_capone_savor",
+      "categoryId": "aa36bfbf-cc4b-4c23-a8a5-9451586f8bd7",
+      "multiplier": 3
+    },
+    {
+      "id": "76d093ab-e709-4e8d-834b-9001f6d47864",
+      "templateId": "template_capone_savor",
+      "categoryId": "3b2145d5-f851-4a9f-b64c-15774bd93afa",
+      "multiplier": 3
+    },
+    {
+      "id": "ecfef096-10d5-4748-ab62-976655c3fc82",
+      "templateId": "template_capone_savor",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
     }
   ],
   "template_intro_bonuses": [
