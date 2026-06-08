@@ -27,5 +27,6 @@ services:
 networks:
   actual-network:
     external: true
-    # IMPORTANT: Change "actual-network" to the actual name of your ActualBudget Docker network!
-    name: your_actual_budget_network_name_here
+    # This grabs the network name from your .env file!
+    # If it's missing, it defaults to 'actual_default'
+    name: ${ACTUAL_NETWORK_NAME:-actual_default}
