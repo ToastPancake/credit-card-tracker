@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  cc-tracker:
+    build: .
+    container_name: cc-tracker
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      # We mount a local 'data' folder to the container's '/app/data'
+      # The app will store tracker.db and .actual-data inside this folder
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=production
+      # - ACTUAL_SERVER_URL=http://actual-server:5006
+      # - ACTUAL_PASSWORD=your_password
+      # - ACTUAL_SYNC_ID=your_sync_id
+      # - ACTUAL_E2E_PASSWORD=your_e2e_password
+    # networks:
+    #   - actual-network  # Uncomment if ActualBudget is on a specific docker network
+
+# networks:
+#   actual-network:
+#     external: true
