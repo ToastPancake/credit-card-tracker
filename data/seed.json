@@ -1,0 +1,2154 @@
+{
+  "issuers": [
+    {
+      "id": "5c8a6940-88be-4457-a004-5c8e048f279b",
+      "name": "Capital One",
+      "loginUrl": "https://verified.capitalone.com/auth/signin"
+    },
+    {
+      "id": "6be3cfad-bbe4-4576-bff8-7fd503c89805",
+      "name": "Wells Fargo",
+      "loginUrl": null
+    },
+    {
+      "id": "e29cd1ac-70c0-4d8b-9523-d75944b7eda4",
+      "name": "Citi",
+      "loginUrl": "https://www.citi.com/"
+    },
+    {
+      "id": "54482629-43d9-41f3-9c4f-b2f23904fb22",
+      "name": "Discover",
+      "loginUrl": "https://www.discover.com/login/"
+    },
+    {
+      "id": "af933029-e588-4d06-bf45-6e7a0311920b",
+      "name": "Chase",
+      "loginUrl": null
+    },
+    {
+      "id": "f810cd13-08ce-4d1e-8101-95a9881cddaa",
+      "name": "American Express",
+      "loginUrl": null
+    }
+  ],
+  "common_categories": [
+    {
+      "id": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "name": "Dining"
+    },
+    {
+      "id": "3b2145d5-f851-4a9f-b64c-15774bd93afa",
+      "name": "Groceries"
+    },
+    {
+      "id": "bdba926d-9af7-4661-b718-22f12fd0b4be",
+      "name": "Travel"
+    },
+    {
+      "id": "ac4020df-1efd-4f21-83d6-4e8f8e5dd9c3",
+      "name": "Drugstores"
+    },
+    {
+      "id": "aa36bfbf-cc4b-4c23-a8a5-9451586f8bd7",
+      "name": "Streaming"
+    },
+    {
+      "id": "b43a29c1-87b9-4cb3-b252-eb3aef620cb6",
+      "name": "Home Improvement"
+    },
+    {
+      "id": "b80d3093-0751-40c0-99c7-7af79c8f53b8",
+      "name": "Online Shopping"
+    },
+    {
+      "id": "c5de83f7-11aa-42e7-8e61-4100a75a1c07",
+      "name": "Transit"
+    },
+    {
+      "id": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "name": "Everything"
+    },
+    {
+      "id": "cb532d77-7c45-4a1e-9d47-51a646ff54e3",
+      "name": "Top Category"
+    },
+    {
+      "id": "cbebcbc0-40c5-412a-a0c6-3ad4401ac256",
+      "name": "Quarterly Rotating"
+    },
+    {
+      "id": "98b9cb10-cca4-48b9-b4b3-1ce5f75bb706",
+      "name": "Entertainment"
+    },
+    {
+      "id": "9f48aa62-2e98-4da4-b3ca-9a77eb7410ca",
+      "name": "Online Groceries"
+    },
+    {
+      "id": "60608038-28b5-4551-b3d8-8a277a340643",
+      "name": "Travel (Portal)"
+    },
+    {
+      "id": "f7f124bb-0be4-42fc-8a13-8e2afd8f91c9",
+      "name": "Flights"
+    },
+    {
+      "id": "5bd11d79-8788-46ba-9ec4-55559f6d7b26",
+      "name": "Flights (Direct or Portal)"
+    },
+    {
+      "id": "31f7c314-3f8b-4074-aa85-617c672ac8cf",
+      "name": "Prepaid Hotels (Portal)"
+    },
+    {
+      "id": "c70cd326-c75f-441d-bb20-bf18a26e9ac8",
+      "name": "Prepaid Car Rentals (Portal)"
+    },
+    {
+      "id": "698b9b6b-4e95-4a19-86b4-24e3b4eefc82",
+      "name": "Hilton"
+    },
+    {
+      "id": "87af1c31-06de-4c42-9ee6-debccce3e61e",
+      "name": "Car Rentals (Direct)"
+    },
+    {
+      "id": "2b11b2c1-2f7d-4dc1-8076-da4604439927",
+      "name": "Marriott"
+    },
+    {
+      "id": "975790ba-f1e9-44fe-8149-2313c1bcdec1",
+      "name": "Flights (Direct)"
+    },
+    {
+      "id": "3d6a8d52-2556-47fa-aa47-e1458c299c8f",
+      "name": "Hotels/Rental Cars (Portal)"
+    },
+    {
+      "id": "34aca580-9adf-45b0-8d65-455550ff91ba",
+      "name": "Flights/Vacation Rentals (Portal)"
+    },
+    {
+      "id": "046383df-b245-4701-91ee-3325df957783",
+      "name": "Entertainment (Portal)"
+    },
+    {
+      "id": "fc6e6bba-625b-45ca-ac66-fc3adec06e2e",
+      "name": "Hotels & Car Rentals (Chase Travel)"
+    },
+    {
+      "id": "24418319-1286-4e85-b298-fe867a6d6e68",
+      "name": "Flights (Chase Travel)"
+    },
+    {
+      "id": "64bb0d40-fe22-44aa-b61c-5338aa00c8a2",
+      "name": "Travel (Chase Travel)"
+    },
+    {
+      "id": "0be85e18-bc94-4ba7-b668-8a0091d48b1c",
+      "name": "Lyft"
+    },
+    {
+      "id": "7e1708d0-b0b3-491c-a7db-b5720b27850a",
+      "name": "Shipping"
+    },
+    {
+      "id": "386ec279-4206-439d-a4d3-33c4fa5a40e5",
+      "name": "Internet, Cable & Phone"
+    },
+    {
+      "id": "78b1beda-5dcf-461a-92bf-ae82951991a8",
+      "name": "Search/Social Media Advertising"
+    },
+    {
+      "id": "fdced2fd-312e-427b-bb67-58c21d59efd9",
+      "name": "Office Supply Stores"
+    },
+    {
+      "id": "b3ab9d7f-e8d4-4034-b556-dc8b9d8733a1",
+      "name": "Gas Stations"
+    },
+    {
+      "id": "e64d32a1-ce1b-4588-98df-c6ceae755f66",
+      "name": "United Purchases"
+    },
+    {
+      "id": "10f97468-90e2-45ff-84f3-b838c635484a",
+      "name": "Citi Travel"
+    },
+    {
+      "id": "be88fecb-f72b-4077-8adc-8f3e0ca4d28f",
+      "name": "Air Travel"
+    },
+    {
+      "id": "2343c1c3-420d-4a95-9da7-37585990bc1c",
+      "name": "Hotels"
+    },
+    {
+      "id": "41c1cb11-61bc-443c-a19a-3c23f4c7f9fd",
+      "name": "Gas Stations / EV"
+    },
+    {
+      "id": "723d223b-116a-4299-a77f-7bd39fe847dd",
+      "name": "Highest Eligible Category"
+    },
+    {
+      "id": "01b5295d-f94b-40f5-bbba-c8824248de62",
+      "name": "Supermarkets & Gas Stations"
+    },
+    {
+      "id": "58e2bb7c-a6b2-4e92-9d04-b36a1727be18",
+      "name": "American Airlines"
+    },
+    {
+      "id": "9680358c-a1e9-4ff2-af0e-43f45be98f97",
+      "name": "AAdvantage Hotels & Cars"
+    },
+    {
+      "id": "4fa52e3f-0433-4b58-985b-a81c31532cf2",
+      "name": "Gas at Costco"
+    },
+    {
+      "id": "b74d40a1-b2c5-457e-9d00-cb3cbf5d2b91",
+      "name": "Gas & EV Charging"
+    },
+    {
+      "id": "55d70847-68f5-4d69-9f93-3ac369f45876",
+      "name": "Restaurants & Travel"
+    },
+    {
+      "id": "614d49d7-9d9d-4f62-ae2f-b162ff622ad9",
+      "name": "Costco & Costco.com"
+    }
+  ],
+  "templates": [
+    {
+      "id": "amex_everyday_preferred",
+      "name": "Amex EveryDay Preferred",
+      "issuerId": "f810cd13-08ce-4d1e-8101-95a9881cddaa",
+      "color": "#9ca3af",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 95,
+      "isBusiness": 0
+    },
+    {
+      "id": "amex_gold",
+      "name": "Amex Gold",
+      "issuerId": "f810cd13-08ce-4d1e-8101-95a9881cddaa",
+      "color": "#eab308",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 325,
+      "isBusiness": 0
+    },
+    {
+      "id": "amex_green",
+      "name": "Amex Green",
+      "issuerId": "f810cd13-08ce-4d1e-8101-95a9881cddaa",
+      "color": "#22c55e",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 150,
+      "isBusiness": 0
+    },
+    {
+      "id": "amex_platinum",
+      "name": "Amex Platinum",
+      "issuerId": "f810cd13-08ce-4d1e-8101-95a9881cddaa",
+      "color": "#94a3b8",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 695,
+      "isBusiness": 0
+    },
+    {
+      "id": "amex_bce",
+      "name": "Blue Cash Everyday",
+      "issuerId": "f810cd13-08ce-4d1e-8101-95a9881cddaa",
+      "color": "#3b82f6",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 0,
+      "isBusiness": 0
+    },
+    {
+      "id": "amex_bcp",
+      "name": "Blue Cash Preferred",
+      "issuerId": "f810cd13-08ce-4d1e-8101-95a9881cddaa",
+      "color": "#1e3a8a",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 95,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_capone_quicksilver",
+      "name": "Capital One Quicksilver",
+      "issuerId": "5c8a6940-88be-4457-a004-5c8e048f279b",
+      "color": "#e2e8f0",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 0,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_capone_savor",
+      "name": "Capital One Savor",
+      "issuerId": "5c8a6940-88be-4457-a004-5c8e048f279b",
+      "color": "#d97706",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 95,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_capone_savor_one",
+      "name": "Capital One SavorOne",
+      "issuerId": "5c8a6940-88be-4457-a004-5c8e048f279b",
+      "color": "#ea580c",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 0,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_capone_venture",
+      "name": "Capital One Venture",
+      "issuerId": "5c8a6940-88be-4457-a004-5c8e048f279b",
+      "color": "#94a3b8",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 95,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_capone_venture_x",
+      "name": "Capital One Venture X",
+      "issuerId": "5c8a6940-88be-4457-a004-5c8e048f279b",
+      "color": "#1e293b",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 395,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_capone_venture_x_business",
+      "name": "Capital One Venture X Business",
+      "issuerId": "5c8a6940-88be-4457-a004-5c8e048f279b",
+      "color": "#0f172a",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 395,
+      "isBusiness": 1
+    },
+    {
+      "id": "template_capone_venture_one",
+      "name": "Capital One VentureOne",
+      "issuerId": "5c8a6940-88be-4457-a004-5c8e048f279b",
+      "color": "#cbd5e1",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 0,
+      "isBusiness": 0
+    },
+    {
+      "id": "chase_freedom_flex",
+      "name": "Chase Freedom Flex",
+      "issuerId": "af933029-e588-4d06-bf45-6e7a0311920b",
+      "color": "#2563eb",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 0,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_chase_freedom_unlimited",
+      "name": "Chase Freedom Unlimited",
+      "issuerId": "af933029-e588-4d06-bf45-6e7a0311920b",
+      "color": "#3b82f6",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 0,
+      "isBusiness": 0
+    },
+    {
+      "id": "chase_freedom_unlimited",
+      "name": "Chase Freedom Unlimited",
+      "issuerId": "af933029-e588-4d06-bf45-6e7a0311920b",
+      "color": "#60a5fa",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 0,
+      "isBusiness": 0
+    },
+    {
+      "id": "chase_ink_business_cash",
+      "name": "Chase Ink Business Cash",
+      "issuerId": "af933029-e588-4d06-bf45-6e7a0311920b",
+      "color": "#3b82f6",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 0,
+      "isBusiness": 1
+    },
+    {
+      "id": "chase_ink_business_preferred",
+      "name": "Chase Ink Business Preferred",
+      "issuerId": "af933029-e588-4d06-bf45-6e7a0311920b",
+      "color": "#1e3a8a",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 95,
+      "isBusiness": 1
+    },
+    {
+      "id": "chase_ink_business_unlimited",
+      "name": "Chase Ink Business Unlimited",
+      "issuerId": "af933029-e588-4d06-bf45-6e7a0311920b",
+      "color": "#e5e7eb",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 0,
+      "isBusiness": 1
+    },
+    {
+      "id": "template_chase_sapphire_preferred",
+      "name": "Chase Sapphire Preferred",
+      "issuerId": "af933029-e588-4d06-bf45-6e7a0311920b",
+      "color": "#2563eb",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 95,
+      "isBusiness": 0
+    },
+    {
+      "id": "chase_sapphire_preferred",
+      "name": "Chase Sapphire Preferred",
+      "issuerId": "af933029-e588-4d06-bf45-6e7a0311920b",
+      "color": "#1d4ed8",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 95,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_chase_sapphire_reserve",
+      "name": "Chase Sapphire Reserve",
+      "issuerId": "af933029-e588-4d06-bf45-6e7a0311920b",
+      "color": "#1e3a8a",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 550,
+      "isBusiness": 0
+    },
+    {
+      "id": "chase_sapphire_reserve",
+      "name": "Chase Sapphire Reserve",
+      "issuerId": "af933029-e588-4d06-bf45-6e7a0311920b",
+      "color": "#0a1930",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 550,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_citi_aadvantage_executive",
+      "name": "Citi AAdvantage Executive",
+      "issuerId": "e29cd1ac-70c0-4d8b-9523-d75944b7eda4",
+      "color": "#111827",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 595,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_citi_aadvantage_platinum_select",
+      "name": "Citi AAdvantage Platinum Select",
+      "issuerId": "e29cd1ac-70c0-4d8b-9523-d75944b7eda4",
+      "color": "#9ca3af",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 99,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_citi_custom_cash",
+      "name": "Citi Custom Cash",
+      "issuerId": "e29cd1ac-70c0-4d8b-9523-d75944b7eda4",
+      "color": "#059669",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 0,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_citi_double_cash",
+      "name": "Citi Double Cash",
+      "issuerId": "e29cd1ac-70c0-4d8b-9523-d75944b7eda4",
+      "color": "#0284c7",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 0,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_citi_rewards_plus",
+      "name": "Citi Rewards+",
+      "issuerId": "e29cd1ac-70c0-4d8b-9523-d75944b7eda4",
+      "color": "#1e3a8a",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 0,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_citi_strata_premier",
+      "name": "Citi Strata Premier",
+      "issuerId": "e29cd1ac-70c0-4d8b-9523-d75944b7eda4",
+      "color": "#0ea5e9",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 95,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_costco_anywhere_visa",
+      "name": "Citi Costco Anywhere Visa",
+      "issuerId": "e29cd1ac-70c0-4d8b-9523-d75944b7eda4",
+      "color": "#4b5563",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 0,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_discover_it",
+      "name": "Discover IT",
+      "issuerId": "54482629-43d9-41f3-9c4f-b2f23904fb22",
+      "color": "#ea580c",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 0,
+      "isBusiness": 0
+    },
+    {
+      "id": "amex_hilton_aspire",
+      "name": "Hilton Honors Aspire",
+      "issuerId": "f810cd13-08ce-4d1e-8101-95a9881cddaa",
+      "color": "#374151",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 550,
+      "isBusiness": 0
+    },
+    {
+      "id": "amex_hilton_surpass",
+      "name": "Hilton Honors Surpass",
+      "issuerId": "f810cd13-08ce-4d1e-8101-95a9881cddaa",
+      "color": "#b45309",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 150,
+      "isBusiness": 0
+    },
+    {
+      "id": "marriott_bonvoy_boundless",
+      "name": "Chase Marriott Bonvoy Boundless",
+      "issuerId": "af933029-e588-4d06-bf45-6e7a0311920b",
+      "color": "#171717",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 95,
+      "isBusiness": 0
+    },
+    {
+      "id": "amex_marriott_brilliant",
+      "name": "Marriott Bonvoy Brilliant",
+      "issuerId": "f810cd13-08ce-4d1e-8101-95a9881cddaa",
+      "color": "#111827",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 650,
+      "isBusiness": 0
+    },
+    {
+      "id": "united_explorer",
+      "name": "Chase United Explorer Card",
+      "issuerId": "af933029-e588-4d06-bf45-6e7a0311920b",
+      "color": "#003366",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 95,
+      "isBusiness": 0
+    },
+    {
+      "id": "template_wf_active_cash",
+      "name": "Wells Fargo Active Cash",
+      "issuerId": "6be3cfad-bbe4-4576-bff8-7fd503c89805",
+      "color": "#b91c1c",
+      "productUrl": null,
+      "quarterlyCategories": null,
+      "annualFee": 0,
+      "isBusiness": 0
+    }
+  ],
+  "template_categories": [
+    {
+      "id": "7cbeb9ef-b6d6-460b-b783-40bf9b6533c3",
+      "templateId": "amex_everyday_preferred",
+      "categoryId": "3b2145d5-f851-4a9f-b64c-15774bd93afa",
+      "multiplier": 3
+    },
+    {
+      "id": "2cc821f8-e513-49d5-947e-ad21914b2a33",
+      "templateId": "amex_everyday_preferred",
+      "categoryId": "b3ab9d7f-e8d4-4034-b556-dc8b9d8733a1",
+      "multiplier": 2
+    },
+    {
+      "id": "37624052-1cd4-43b5-8e86-41f49d7ccdab",
+      "templateId": "amex_everyday_preferred",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "bf2e8e99-4eb1-470f-b1bc-e18f27ceb2a3",
+      "templateId": "amex_gold",
+      "categoryId": "31f7c314-3f8b-4074-aa85-617c672ac8cf",
+      "multiplier": 5
+    },
+    {
+      "id": "77a61889-1816-48e8-a669-fd59d4740eb6",
+      "templateId": "amex_gold",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 4
+    },
+    {
+      "id": "d4e6e76f-e588-4bde-9933-77c089607e68",
+      "templateId": "amex_gold",
+      "categoryId": "3b2145d5-f851-4a9f-b64c-15774bd93afa",
+      "multiplier": 4
+    },
+    {
+      "id": "74bb1cc9-cdba-48e3-b045-0026c8b08515",
+      "templateId": "amex_gold",
+      "categoryId": "5bd11d79-8788-46ba-9ec4-55559f6d7b26",
+      "multiplier": 3
+    },
+    {
+      "id": "e37dd0cf-0865-4ff6-a4a6-a08f9ae5dd3e",
+      "templateId": "amex_gold",
+      "categoryId": "c70cd326-c75f-441d-bb20-bf18a26e9ac8",
+      "multiplier": 2
+    },
+    {
+      "id": "5a1b2103-b4f3-4309-95ce-a86610decc7f",
+      "templateId": "amex_gold",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "0f7f4893-1ec0-4f67-8829-3ed4a020db6a",
+      "templateId": "amex_green",
+      "categoryId": "bdba926d-9af7-4661-b718-22f12fd0b4be",
+      "multiplier": 3
+    },
+    {
+      "id": "f9bf7605-78d7-4899-8850-120c3bbe96d8",
+      "templateId": "amex_green",
+      "categoryId": "c5de83f7-11aa-42e7-8e61-4100a75a1c07",
+      "multiplier": 3
+    },
+    {
+      "id": "bcfb2592-3742-41be-8ce1-12c5cde37ec4",
+      "templateId": "amex_green",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 3
+    },
+    {
+      "id": "fff19a06-7436-40a1-ab5f-5a2cf125f887",
+      "templateId": "amex_green",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "0dbb8f4e-ad98-42b0-9e3a-cc1eb70833cd",
+      "templateId": "amex_platinum",
+      "categoryId": "5bd11d79-8788-46ba-9ec4-55559f6d7b26",
+      "multiplier": 5
+    },
+    {
+      "id": "9817709d-ace7-408c-8ff7-ce40443619a1",
+      "templateId": "amex_platinum",
+      "categoryId": "31f7c314-3f8b-4074-aa85-617c672ac8cf",
+      "multiplier": 5
+    },
+    {
+      "id": "47fcbd1a-838f-4a4f-b094-c557d3e01f3a",
+      "templateId": "amex_platinum",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "46993b88-d468-4819-9158-7c75b892e6d0",
+      "templateId": "amex_bce",
+      "categoryId": "3b2145d5-f851-4a9f-b64c-15774bd93afa",
+      "multiplier": 3
+    },
+    {
+      "id": "a464b7e2-139f-429c-b194-33f4e5877b9b",
+      "templateId": "amex_bce",
+      "categoryId": "b80d3093-0751-40c0-99c7-7af79c8f53b8",
+      "multiplier": 3
+    },
+    {
+      "id": "462a716d-8933-49e9-a3da-d475139f0683",
+      "templateId": "amex_bce",
+      "categoryId": "b3ab9d7f-e8d4-4034-b556-dc8b9d8733a1",
+      "multiplier": 3
+    },
+    {
+      "id": "bac6b6db-b241-4214-8f84-7546310ae619",
+      "templateId": "amex_bce",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "75e74eee-d6ff-4465-a7e6-34cf4c592b20",
+      "templateId": "amex_bcp",
+      "categoryId": "3b2145d5-f851-4a9f-b64c-15774bd93afa",
+      "multiplier": 6
+    },
+    {
+      "id": "c5d0e32c-2ab5-4f17-b5da-40dd07bfa5d9",
+      "templateId": "amex_bcp",
+      "categoryId": "aa36bfbf-cc4b-4c23-a8a5-9451586f8bd7",
+      "multiplier": 6
+    },
+    {
+      "id": "c3274656-7f8a-4525-a641-da2df9257711",
+      "templateId": "amex_bcp",
+      "categoryId": "c5de83f7-11aa-42e7-8e61-4100a75a1c07",
+      "multiplier": 3
+    },
+    {
+      "id": "36038d83-cd99-4514-9919-e08d237022b3",
+      "templateId": "amex_bcp",
+      "categoryId": "b3ab9d7f-e8d4-4034-b556-dc8b9d8733a1",
+      "multiplier": 3
+    },
+    {
+      "id": "6257e30e-5380-4ab4-85a0-c7ddcec77113",
+      "templateId": "amex_bcp",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "18d4cf23-9df4-4160-8d13-d76833b92636",
+      "templateId": "template_capone_quicksilver",
+      "categoryId": "3d6a8d52-2556-47fa-aa47-e1458c299c8f",
+      "multiplier": 5
+    },
+    {
+      "id": "992e1456-a86d-43c9-bc8a-b0ba284d58e2",
+      "templateId": "template_capone_quicksilver",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1.5
+    },
+    {
+      "id": "120bc50a-7481-4fb7-b2a3-753fe1add47b",
+      "templateId": "template_capone_savor",
+      "categoryId": "046383df-b245-4701-91ee-3325df957783",
+      "multiplier": 8
+    },
+    {
+      "id": "1b4515a0-e808-4c2e-ae31-49696aa14c1c",
+      "templateId": "template_capone_savor",
+      "categoryId": "3d6a8d52-2556-47fa-aa47-e1458c299c8f",
+      "multiplier": 5
+    },
+    {
+      "id": "e9fd957d-6a86-4299-917a-044f6735287f",
+      "templateId": "template_capone_savor",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 3
+    },
+    {
+      "id": "8970e55d-966d-42f7-b7f4-390edc224d3e",
+      "templateId": "template_capone_savor",
+      "categoryId": "98b9cb10-cca4-48b9-b4b3-1ce5f75bb706",
+      "multiplier": 3
+    },
+    {
+      "id": "f1ca4bd1-95d5-46d8-952b-79e5ddacd36d",
+      "templateId": "template_capone_savor",
+      "categoryId": "aa36bfbf-cc4b-4c23-a8a5-9451586f8bd7",
+      "multiplier": 3
+    },
+    {
+      "id": "a780b81d-4e53-407a-802e-53a6a8f90493",
+      "templateId": "template_capone_savor",
+      "categoryId": "3b2145d5-f851-4a9f-b64c-15774bd93afa",
+      "multiplier": 3
+    },
+    {
+      "id": "b7dc4277-cfdd-44c0-a538-0e131e1f4fd0",
+      "templateId": "template_capone_savor",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "49dbcefc-3fde-4eef-81b1-ec0148c7e19c",
+      "templateId": "template_capone_savor_one",
+      "categoryId": "046383df-b245-4701-91ee-3325df957783",
+      "multiplier": 8
+    },
+    {
+      "id": "f3748314-b077-4fee-9ff5-fe03905b730e",
+      "templateId": "template_capone_savor_one",
+      "categoryId": "3d6a8d52-2556-47fa-aa47-e1458c299c8f",
+      "multiplier": 5
+    },
+    {
+      "id": "513c6d0c-908d-45f4-9038-e7a2db23a2bc",
+      "templateId": "template_capone_savor_one",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 3
+    },
+    {
+      "id": "7c525bfb-a9cc-4599-a69d-b5e0043785fd",
+      "templateId": "template_capone_savor_one",
+      "categoryId": "98b9cb10-cca4-48b9-b4b3-1ce5f75bb706",
+      "multiplier": 3
+    },
+    {
+      "id": "df822b5d-deaf-4f82-96ad-e8974cb01e73",
+      "templateId": "template_capone_savor_one",
+      "categoryId": "aa36bfbf-cc4b-4c23-a8a5-9451586f8bd7",
+      "multiplier": 3
+    },
+    {
+      "id": "fc2e4c85-30fc-424b-9aa5-abf6b8c00fd6",
+      "templateId": "template_capone_savor_one",
+      "categoryId": "3b2145d5-f851-4a9f-b64c-15774bd93afa",
+      "multiplier": 3
+    },
+    {
+      "id": "01868402-43d6-48f9-96c7-7ebb07cd1767",
+      "templateId": "template_capone_savor_one",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "bc609234-e29f-46a1-964d-4cf3d7574a63",
+      "templateId": "template_capone_venture",
+      "categoryId": "3d6a8d52-2556-47fa-aa47-e1458c299c8f",
+      "multiplier": 5
+    },
+    {
+      "id": "421d0636-4f34-426f-af4f-59ad576749f3",
+      "templateId": "template_capone_venture",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 2
+    },
+    {
+      "id": "d0cb9cf8-4d5d-471c-9ba2-f7dbf667c3d1",
+      "templateId": "template_capone_venture_x",
+      "categoryId": "3d6a8d52-2556-47fa-aa47-e1458c299c8f",
+      "multiplier": 10
+    },
+    {
+      "id": "d30a6415-5ced-4481-a82b-94bf0c83702a",
+      "templateId": "template_capone_venture_x",
+      "categoryId": "34aca580-9adf-45b0-8d65-455550ff91ba",
+      "multiplier": 5
+    },
+    {
+      "id": "a9f13356-979d-409c-8784-41c7c73d663f",
+      "templateId": "template_capone_venture_x",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 2
+    },
+    {
+      "id": "de3974ef-c7db-4b59-a469-3e491fe2d512",
+      "templateId": "template_capone_venture_x_business",
+      "categoryId": "3d6a8d52-2556-47fa-aa47-e1458c299c8f",
+      "multiplier": 10
+    },
+    {
+      "id": "7515bb2b-7a2b-4551-97cc-0565862a6248",
+      "templateId": "template_capone_venture_x_business",
+      "categoryId": "34aca580-9adf-45b0-8d65-455550ff91ba",
+      "multiplier": 5
+    },
+    {
+      "id": "45d430ec-c2fb-425f-8575-20d954d4d671",
+      "templateId": "template_capone_venture_x_business",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 2
+    },
+    {
+      "id": "7b49dd32-3cf5-4974-b93e-d27941e9867b",
+      "templateId": "template_capone_venture_one",
+      "categoryId": "3d6a8d52-2556-47fa-aa47-e1458c299c8f",
+      "multiplier": 5
+    },
+    {
+      "id": "306fa86e-58c8-4d69-96b0-be037748ce3d",
+      "templateId": "template_capone_venture_one",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1.25
+    },
+    {
+      "id": "9f8eb4db-920b-4ebd-b2ff-6fdb0773c2e4",
+      "templateId": "chase_freedom_flex",
+      "categoryId": "cbebcbc0-40c5-412a-a0c6-3ad4401ac256",
+      "multiplier": 5
+    },
+    {
+      "id": "0712d0d9-eb49-425f-b070-0da8301cc110",
+      "templateId": "chase_freedom_flex",
+      "categoryId": "64bb0d40-fe22-44aa-b61c-5338aa00c8a2",
+      "multiplier": 5
+    },
+    {
+      "id": "7bb60605-20bc-4e15-9ff6-b9b6beb73266",
+      "templateId": "chase_freedom_flex",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 3
+    },
+    {
+      "id": "c4a9bbb0-5b4d-43b2-8d6d-59e6685945be",
+      "templateId": "chase_freedom_flex",
+      "categoryId": "ac4020df-1efd-4f21-83d6-4e8f8e5dd9c3",
+      "multiplier": 3
+    },
+    {
+      "id": "c1c7d006-3e65-4786-9b12-031b0e5f180f",
+      "templateId": "chase_freedom_flex",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "361fd862-cc1d-40b5-b1fe-0f5354571ef5",
+      "templateId": "template_chase_freedom_unlimited",
+      "categoryId": "60608038-28b5-4551-b3d8-8a277a340643",
+      "multiplier": 5
+    },
+    {
+      "id": "79e32af4-b573-4681-bcda-60fda9625e7d",
+      "templateId": "template_chase_freedom_unlimited",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 3
+    },
+    {
+      "id": "f7bfc566-adbd-436e-af34-174c1e34eb0c",
+      "templateId": "template_chase_freedom_unlimited",
+      "categoryId": "ac4020df-1efd-4f21-83d6-4e8f8e5dd9c3",
+      "multiplier": 3
+    },
+    {
+      "id": "e6ca9e92-9d69-412d-a0fd-9cb892ab326f",
+      "templateId": "template_chase_freedom_unlimited",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1.5
+    },
+    {
+      "id": "b6b8066d-910b-433d-b482-7aa355d15108",
+      "templateId": "chase_freedom_unlimited",
+      "categoryId": "64bb0d40-fe22-44aa-b61c-5338aa00c8a2",
+      "multiplier": 5
+    },
+    {
+      "id": "856ffce6-753b-4740-a4c0-379addd53e4a",
+      "templateId": "chase_freedom_unlimited",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 3
+    },
+    {
+      "id": "38dae6f6-f130-496e-801f-a6a616cc7216",
+      "templateId": "chase_freedom_unlimited",
+      "categoryId": "ac4020df-1efd-4f21-83d6-4e8f8e5dd9c3",
+      "multiplier": 3
+    },
+    {
+      "id": "787e810c-f0b5-4ad2-893f-a7a720473d3a",
+      "templateId": "chase_freedom_unlimited",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1.5
+    },
+    {
+      "id": "415ea4c6-d3d4-4700-b610-c01002180460",
+      "templateId": "chase_ink_business_cash",
+      "categoryId": "0be85e18-bc94-4ba7-b668-8a0091d48b1c",
+      "multiplier": 5
+    },
+    {
+      "id": "94d7be06-ae47-4081-88cf-64eb5c2861d2",
+      "templateId": "chase_ink_business_cash",
+      "categoryId": "fdced2fd-312e-427b-bb67-58c21d59efd9",
+      "multiplier": 5
+    },
+    {
+      "id": "50e85d52-2466-4242-abe3-739303d47867",
+      "templateId": "chase_ink_business_cash",
+      "categoryId": "386ec279-4206-439d-a4d3-33c4fa5a40e5",
+      "multiplier": 5
+    },
+    {
+      "id": "9fb5ad8e-ab7f-470b-be05-5c157808bca6",
+      "templateId": "chase_ink_business_cash",
+      "categoryId": "b3ab9d7f-e8d4-4034-b556-dc8b9d8733a1",
+      "multiplier": 2
+    },
+    {
+      "id": "7a4a4326-2137-4c1a-9d29-210e2801f5f3",
+      "templateId": "chase_ink_business_cash",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 2
+    },
+    {
+      "id": "f897f937-e4e1-4089-be8d-911c5d320873",
+      "templateId": "chase_ink_business_cash",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "9472da3f-327a-4ca8-a3f7-5af2c30f551f",
+      "templateId": "chase_ink_business_preferred",
+      "categoryId": "0be85e18-bc94-4ba7-b668-8a0091d48b1c",
+      "multiplier": 5
+    },
+    {
+      "id": "76654967-b06d-420e-be75-a45c1d723c3b",
+      "templateId": "chase_ink_business_preferred",
+      "categoryId": "bdba926d-9af7-4661-b718-22f12fd0b4be",
+      "multiplier": 3
+    },
+    {
+      "id": "4f46fa9e-d40b-47f8-b347-4bb370ecf2c1",
+      "templateId": "chase_ink_business_preferred",
+      "categoryId": "7e1708d0-b0b3-491c-a7db-b5720b27850a",
+      "multiplier": 3
+    },
+    {
+      "id": "754cdd47-1583-44c8-bf2b-1b61cd618110",
+      "templateId": "chase_ink_business_preferred",
+      "categoryId": "386ec279-4206-439d-a4d3-33c4fa5a40e5",
+      "multiplier": 3
+    },
+    {
+      "id": "dfc99c00-9453-4288-9587-f942168816b2",
+      "templateId": "chase_ink_business_preferred",
+      "categoryId": "78b1beda-5dcf-461a-92bf-ae82951991a8",
+      "multiplier": 3
+    },
+    {
+      "id": "9bb29415-f9e1-43ba-a109-57816d4d698c",
+      "templateId": "chase_ink_business_preferred",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "7a42e2c7-1d46-4cac-8e8f-282542fce40d",
+      "templateId": "chase_ink_business_unlimited",
+      "categoryId": "0be85e18-bc94-4ba7-b668-8a0091d48b1c",
+      "multiplier": 5
+    },
+    {
+      "id": "a1c7f05d-267d-4b4e-924b-0a4b2eaaac65",
+      "templateId": "chase_ink_business_unlimited",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1.5
+    },
+    {
+      "id": "0c504172-ed20-4dbb-8a24-df6419b05f2c",
+      "templateId": "template_chase_sapphire_preferred",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 3
+    },
+    {
+      "id": "99cb333b-aa45-465c-9854-8ccb6fb8e32b",
+      "templateId": "template_chase_sapphire_preferred",
+      "categoryId": "9f48aa62-2e98-4da4-b3ca-9a77eb7410ca",
+      "multiplier": 3
+    },
+    {
+      "id": "995fb14f-fa76-4c55-b117-d9c9a967833b",
+      "templateId": "template_chase_sapphire_preferred",
+      "categoryId": "aa36bfbf-cc4b-4c23-a8a5-9451586f8bd7",
+      "multiplier": 3
+    },
+    {
+      "id": "8d6e04be-fcc9-41f3-b434-2cea600b2269",
+      "templateId": "template_chase_sapphire_preferred",
+      "categoryId": "bdba926d-9af7-4661-b718-22f12fd0b4be",
+      "multiplier": 2
+    },
+    {
+      "id": "36f4f137-d63f-491e-a3a5-8583e56cce20",
+      "templateId": "template_chase_sapphire_preferred",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "bac7601d-5393-4017-ad08-525ac73951d8",
+      "templateId": "chase_sapphire_preferred",
+      "categoryId": "64bb0d40-fe22-44aa-b61c-5338aa00c8a2",
+      "multiplier": 5
+    },
+    {
+      "id": "1639f8dd-7d4c-4a66-8873-f65949ba3c04",
+      "templateId": "chase_sapphire_preferred",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 3
+    },
+    {
+      "id": "652d7f9d-190e-4a2b-8b9c-c62a6fa161ca",
+      "templateId": "chase_sapphire_preferred",
+      "categoryId": "9f48aa62-2e98-4da4-b3ca-9a77eb7410ca",
+      "multiplier": 3
+    },
+    {
+      "id": "ce3822b5-6db1-4fcd-8be0-97e3db1643ad",
+      "templateId": "chase_sapphire_preferred",
+      "categoryId": "aa36bfbf-cc4b-4c23-a8a5-9451586f8bd7",
+      "multiplier": 3
+    },
+    {
+      "id": "9752ac58-ae86-4017-857e-aa703daeac39",
+      "templateId": "chase_sapphire_preferred",
+      "categoryId": "bdba926d-9af7-4661-b718-22f12fd0b4be",
+      "multiplier": 2
+    },
+    {
+      "id": "6ebdbe40-ac79-4c22-8587-74f64ee2c1d7",
+      "templateId": "chase_sapphire_preferred",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "bd56aaa2-43d2-4a7a-980c-fef8e038eba8",
+      "templateId": "template_chase_sapphire_reserve",
+      "categoryId": "bdba926d-9af7-4661-b718-22f12fd0b4be",
+      "multiplier": 3
+    },
+    {
+      "id": "877c71bf-105f-4bd9-bf5b-171e507588ca",
+      "templateId": "template_chase_sapphire_reserve",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 3
+    },
+    {
+      "id": "23772761-2f34-4595-8437-476204f91c59",
+      "templateId": "template_chase_sapphire_reserve",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "9db56c92-af86-405a-931d-f21e7abcece2",
+      "templateId": "chase_sapphire_reserve",
+      "categoryId": "fc6e6bba-625b-45ca-ac66-fc3adec06e2e",
+      "multiplier": 10
+    },
+    {
+      "id": "0beb31ae-04ee-4c80-9258-1b8b5e6779f4",
+      "templateId": "chase_sapphire_reserve",
+      "categoryId": "24418319-1286-4e85-b298-fe867a6d6e68",
+      "multiplier": 5
+    },
+    {
+      "id": "ae1bd0c6-ea33-4906-9c49-4617ca98272c",
+      "templateId": "chase_sapphire_reserve",
+      "categoryId": "bdba926d-9af7-4661-b718-22f12fd0b4be",
+      "multiplier": 3
+    },
+    {
+      "id": "ba70a2b2-838b-4fed-a400-090ba8983957",
+      "templateId": "chase_sapphire_reserve",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 3
+    },
+    {
+      "id": "c00489b4-015b-4c0d-9cef-172cb6428051",
+      "templateId": "chase_sapphire_reserve",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "4f95957c-ffb5-4643-a831-d262b5ec9ec8",
+      "templateId": "template_citi_aadvantage_executive",
+      "categoryId": "9680358c-a1e9-4ff2-af0e-43f45be98f97",
+      "multiplier": 10
+    },
+    {
+      "id": "7034e66e-30df-435e-a835-558dfa7bc3c4",
+      "templateId": "template_citi_aadvantage_executive",
+      "categoryId": "58e2bb7c-a6b2-4e92-9d04-b36a1727be18",
+      "multiplier": 4
+    },
+    {
+      "id": "21df1b54-034b-493d-b55a-a128308b8c02",
+      "templateId": "template_citi_aadvantage_executive",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "5292d393-4918-412a-af91-8552f5015311",
+      "templateId": "template_citi_aadvantage_platinum_select",
+      "categoryId": "58e2bb7c-a6b2-4e92-9d04-b36a1727be18",
+      "multiplier": 2
+    },
+    {
+      "id": "ec475db9-0867-4a7d-892b-f5787020c8ca",
+      "templateId": "template_citi_aadvantage_platinum_select",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 2
+    },
+    {
+      "id": "e4667eec-2293-42ea-8aca-4f408064c302",
+      "templateId": "template_citi_aadvantage_platinum_select",
+      "categoryId": "b3ab9d7f-e8d4-4034-b556-dc8b9d8733a1",
+      "multiplier": 2
+    },
+    {
+      "id": "16ba448c-1f80-44e5-bac8-915ca56d5556",
+      "templateId": "template_citi_aadvantage_platinum_select",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "5ca93f1c-b568-485d-89b5-8d0b887a3b3e",
+      "templateId": "template_citi_custom_cash",
+      "categoryId": "723d223b-116a-4299-a77f-7bd39fe847dd",
+      "multiplier": 5
+    },
+    {
+      "id": "370a3892-6c4e-4926-bdb3-4d60fa6c1e76",
+      "templateId": "template_citi_custom_cash",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "4a4291e6-c9e9-4dee-9d7e-d6d20423837b",
+      "templateId": "template_citi_double_cash",
+      "categoryId": "10f97468-90e2-45ff-84f3-b838c635484a",
+      "multiplier": 5
+    },
+    {
+      "id": "71e83fc2-b264-4cb9-97d7-b37a398c93de",
+      "templateId": "template_citi_double_cash",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 2
+    },
+    {
+      "id": "d8cd38f5-8eb0-48c8-a022-a4e245b401ed",
+      "templateId": "template_citi_rewards_plus",
+      "categoryId": "01b5295d-f94b-40f5-bbba-c8824248de62",
+      "multiplier": 2
+    },
+    {
+      "id": "b9368e23-f5b2-481c-8a4c-0e8e9bd571db",
+      "templateId": "template_citi_rewards_plus",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "7633bc7a-cd3b-4499-906f-fd12055911eb",
+      "templateId": "template_citi_strata_premier",
+      "categoryId": "10f97468-90e2-45ff-84f3-b838c635484a",
+      "multiplier": 10
+    },
+    {
+      "id": "916708ae-afd1-4c7c-9efc-93a182215fd3",
+      "templateId": "template_citi_strata_premier",
+      "categoryId": "be88fecb-f72b-4077-8adc-8f3e0ca4d28f",
+      "multiplier": 3
+    },
+    {
+      "id": "3bfd995b-463c-43eb-bd95-70a1d1e27f78",
+      "templateId": "template_citi_strata_premier",
+      "categoryId": "2343c1c3-420d-4a95-9da7-37585990bc1c",
+      "multiplier": 3
+    },
+    {
+      "id": "eef38090-a932-42e3-b763-465ecf1b1537",
+      "templateId": "template_citi_strata_premier",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 3
+    },
+    {
+      "id": "65b0ccf1-9d05-42ff-8ec8-93db525ce979",
+      "templateId": "template_citi_strata_premier",
+      "categoryId": "3b2145d5-f851-4a9f-b64c-15774bd93afa",
+      "multiplier": 3
+    },
+    {
+      "id": "e6a699a8-28f2-4156-a187-4c5d60d509b3",
+      "templateId": "template_citi_strata_premier",
+      "categoryId": "41c1cb11-61bc-443c-a19a-3c23f4c7f9fd",
+      "multiplier": 3
+    },
+    {
+      "id": "f7d5267a-5594-4c46-9252-c8ba16ea0819",
+      "templateId": "template_citi_strata_premier",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "e36603a3-cb21-4324-8a90-1bed43926447",
+      "templateId": "template_costco_anywhere_visa",
+      "categoryId": "4fa52e3f-0433-4b58-985b-a81c31532cf2",
+      "multiplier": 5
+    },
+    {
+      "id": "2effe8c8-e43c-4043-9b0b-3927573b181f",
+      "templateId": "template_costco_anywhere_visa",
+      "categoryId": "b74d40a1-b2c5-457e-9d00-cb3cbf5d2b91",
+      "multiplier": 4
+    },
+    {
+      "id": "3eec6ab3-b1e3-4ff8-90ec-2a19aaffdb83",
+      "templateId": "template_costco_anywhere_visa",
+      "categoryId": "55d70847-68f5-4d69-9f93-3ac369f45876",
+      "multiplier": 3
+    },
+    {
+      "id": "e53349cd-7e58-451f-a6b6-f7076ebcd1e5",
+      "templateId": "template_costco_anywhere_visa",
+      "categoryId": "614d49d7-9d9d-4f62-ae2f-b162ff622ad9",
+      "multiplier": 2
+    },
+    {
+      "id": "985c4d18-d7af-41dd-aaac-93220ddf8f36",
+      "templateId": "template_costco_anywhere_visa",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "be1991a2-29d4-425a-8ea0-ee912fd0cd80",
+      "templateId": "template_discover_it",
+      "categoryId": "cbebcbc0-40c5-412a-a0c6-3ad4401ac256",
+      "multiplier": 5
+    },
+    {
+      "id": "133e3ee9-b92c-4c20-9630-c68f6fa933ce",
+      "templateId": "template_discover_it",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "ff6da1bc-751e-42d0-8a07-added66d8ad2",
+      "templateId": "amex_hilton_aspire",
+      "categoryId": "698b9b6b-4e95-4a19-86b4-24e3b4eefc82",
+      "multiplier": 14
+    },
+    {
+      "id": "9200e7bc-4285-4bb2-bede-acd0c1924fa7",
+      "templateId": "amex_hilton_aspire",
+      "categoryId": "5bd11d79-8788-46ba-9ec4-55559f6d7b26",
+      "multiplier": 7
+    },
+    {
+      "id": "5e906d4b-df40-4ac9-9e40-56b29baad513",
+      "templateId": "amex_hilton_aspire",
+      "categoryId": "87af1c31-06de-4c42-9ee6-debccce3e61e",
+      "multiplier": 7
+    },
+    {
+      "id": "0e2cb4af-6ebd-418b-9633-467b8cdc9ac5",
+      "templateId": "amex_hilton_aspire",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 7
+    },
+    {
+      "id": "b7c5df69-68b1-4a8a-b204-49a090d9a204",
+      "templateId": "amex_hilton_aspire",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 3
+    },
+    {
+      "id": "36119287-d9c9-44d1-8fc4-797ba27ac33f",
+      "templateId": "amex_hilton_surpass",
+      "categoryId": "698b9b6b-4e95-4a19-86b4-24e3b4eefc82",
+      "multiplier": 12
+    },
+    {
+      "id": "f1f2fc4e-a6ef-4c24-ad19-77982da2af4c",
+      "templateId": "amex_hilton_surpass",
+      "categoryId": "3b2145d5-f851-4a9f-b64c-15774bd93afa",
+      "multiplier": 6
+    },
+    {
+      "id": "3116fafd-d78f-491f-b095-c4034e61ce8a",
+      "templateId": "amex_hilton_surpass",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 6
+    },
+    {
+      "id": "a25d0205-7dc1-42d1-a984-66ceb3cb58d1",
+      "templateId": "amex_hilton_surpass",
+      "categoryId": "b3ab9d7f-e8d4-4034-b556-dc8b9d8733a1",
+      "multiplier": 6
+    },
+    {
+      "id": "372aae8d-b086-4a34-84ce-918d769c53da",
+      "templateId": "amex_hilton_surpass",
+      "categoryId": "b80d3093-0751-40c0-99c7-7af79c8f53b8",
+      "multiplier": 4
+    },
+    {
+      "id": "63fd2fe4-f4e0-4451-80c8-cecebb9970c6",
+      "templateId": "amex_hilton_surpass",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 3
+    },
+    {
+      "id": "4775bf1c-de24-4ec3-8ed5-fdd78a253f8d",
+      "templateId": "marriott_bonvoy_boundless",
+      "categoryId": "2b11b2c1-2f7d-4dc1-8076-da4604439927",
+      "multiplier": 6
+    },
+    {
+      "id": "861f54c2-43c2-4867-b83e-f1aa1b28cc21",
+      "templateId": "marriott_bonvoy_boundless",
+      "categoryId": "b3ab9d7f-e8d4-4034-b556-dc8b9d8733a1",
+      "multiplier": 3
+    },
+    {
+      "id": "d98cf961-b641-464e-bdcd-489b27fd404b",
+      "templateId": "marriott_bonvoy_boundless",
+      "categoryId": "3b2145d5-f851-4a9f-b64c-15774bd93afa",
+      "multiplier": 3
+    },
+    {
+      "id": "21f34111-89c4-4324-b7e0-64b623ff9509",
+      "templateId": "marriott_bonvoy_boundless",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 3
+    },
+    {
+      "id": "1c02c59a-2898-4624-952f-345b6b7d8a09",
+      "templateId": "marriott_bonvoy_boundless",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 2
+    },
+    {
+      "id": "cc92f966-fa3d-4155-9289-a2633b5d6965",
+      "templateId": "amex_marriott_brilliant",
+      "categoryId": "2b11b2c1-2f7d-4dc1-8076-da4604439927",
+      "multiplier": 6
+    },
+    {
+      "id": "599e5a60-0a65-468c-b9e7-1559f78428e9",
+      "templateId": "amex_marriott_brilliant",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 3
+    },
+    {
+      "id": "84232dda-cb7d-462d-b7dc-3f9a6fe83e8d",
+      "templateId": "amex_marriott_brilliant",
+      "categoryId": "975790ba-f1e9-44fe-8149-2313c1bcdec1",
+      "multiplier": 3
+    },
+    {
+      "id": "c38b77d8-bbb2-411c-b5dc-9612552c95ba",
+      "templateId": "amex_marriott_brilliant",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 2
+    },
+    {
+      "id": "117ee52e-4185-409e-9f59-48fa07a593b1",
+      "templateId": "united_explorer",
+      "categoryId": "e64d32a1-ce1b-4588-98df-c6ceae755f66",
+      "multiplier": 3
+    },
+    {
+      "id": "9324bd71-60d5-4512-bcd0-b69bc8cad48c",
+      "templateId": "united_explorer",
+      "categoryId": "94b8059f-24fd-4ff8-9ba9-e4119af80c1b",
+      "multiplier": 2
+    },
+    {
+      "id": "0f78a42d-920a-48e4-b155-16a4e6391b85",
+      "templateId": "united_explorer",
+      "categoryId": "2343c1c3-420d-4a95-9da7-37585990bc1c",
+      "multiplier": 2
+    },
+    {
+      "id": "7ebf937d-178f-4e14-8056-38b0ac3fe100",
+      "templateId": "united_explorer",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 1
+    },
+    {
+      "id": "3de6cd4f-eeb2-41d0-94f7-ac1f35565cc8",
+      "templateId": "template_wf_active_cash",
+      "categoryId": "8ab9a38c-cd43-4e7b-9557-3870ffd6a38a",
+      "multiplier": 2
+    }
+  ],
+  "template_intro_bonuses": [
+    {
+      "id": "875f804d-5aba-495e-a265-e96378ed8a94",
+      "templateId": "template_discover_it",
+      "type": "GlobalMultiplierMatch",
+      "description": null,
+      "deadline": null,
+      "spendRequirement": null,
+      "rewardAmount": null,
+      "modifierValue": 2,
+      "categoryId": null
+    }
+  ],
+  "template_credits": [
+    {
+      "id": "2bf28ab3-d3b3-4758-ab68-12470e924478",
+      "templateId": "amex_gold",
+      "name": "Dining Credit",
+      "amount": 120,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Dining"
+    },
+    {
+      "id": "ede941fe-5352-4a15-852f-a5a21f5730e5",
+      "templateId": "amex_gold",
+      "name": "Uber Cash",
+      "amount": 120,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "210b137e-2e9c-4ddf-8c8b-b5eeb5462e36",
+      "templateId": "amex_gold",
+      "name": "Resy Credit",
+      "amount": 100,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Dining"
+    },
+    {
+      "id": "925709b4-9522-4969-8d0c-71b6939372cd",
+      "templateId": "amex_gold",
+      "name": "Dunkin' Credit",
+      "amount": 84,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Dining"
+    },
+    {
+      "id": "8bf3c3fc-1524-4372-b50e-c2288890df78",
+      "templateId": "amex_green",
+      "name": "Clear Plus",
+      "amount": 209,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Custom",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "7a892c7b-e696-4d32-bf1b-162a5b9d03d4",
+      "templateId": "amex_green",
+      "name": "LoungeBuddy",
+      "amount": 100,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "9ff400f8-66b3-40de-af21-5aea0cc5ae87",
+      "templateId": "amex_platinum",
+      "name": "Hotel Credit",
+      "amount": 600,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "77d88189-cfe4-48cd-8c51-dce3b7985eae",
+      "templateId": "amex_platinum",
+      "name": "Resy Dining Credit",
+      "amount": 400,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Dining"
+    },
+    {
+      "id": "4040bb8a-5104-4589-8ea6-430ddec93777",
+      "templateId": "amex_platinum",
+      "name": "Uber Cash & Uber One",
+      "amount": 320,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "bf7b1108-5bf5-4b23-bb89-8e37856bc7fd",
+      "templateId": "amex_platinum",
+      "name": "Digital Entertainment",
+      "amount": 300,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Lifestyle"
+    },
+    {
+      "id": "1c5bd1ee-0d7f-4f6a-b41a-e02fccd0553d",
+      "templateId": "amex_platinum",
+      "name": "Lululemon Credit",
+      "amount": 300,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "General"
+    },
+    {
+      "id": "0ad5e125-c215-4c2c-8732-6b433bfaf9b9",
+      "templateId": "amex_platinum",
+      "name": "Equinox Credit",
+      "amount": 300,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Lifestyle"
+    },
+    {
+      "id": "eb67b3b1-9d5c-4592-a314-eea92d3bdaa1",
+      "templateId": "amex_platinum",
+      "name": "Clear Plus",
+      "amount": 209,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Custom",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "66430f65-d1ee-4206-9960-a94983226a64",
+      "templateId": "amex_platinum",
+      "name": "Airline Fee Credit",
+      "amount": 200,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "d368e3c2-bfe5-40ca-aa05-e2e5cd03aea7",
+      "templateId": "amex_platinum",
+      "name": "Oura Ring Credit",
+      "amount": 200,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "General"
+    },
+    {
+      "id": "367d9e46-3968-4bf2-abdf-dc0466b4c1f3",
+      "templateId": "amex_platinum",
+      "name": "Walmart+ Credit",
+      "amount": 155,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Lifestyle"
+    },
+    {
+      "id": "718b41c4-fb76-4bae-9413-94c05c154091",
+      "templateId": "amex_bce",
+      "name": "Home Chef",
+      "amount": 180,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "General"
+    },
+    {
+      "id": "b3f1a38c-506f-4cc4-8baa-d290d7d0b957",
+      "templateId": "amex_bce",
+      "name": "Disney Bundle Credit",
+      "amount": 84,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Lifestyle"
+    },
+    {
+      "id": "b8ed00dd-9713-428d-b0e6-09283fdbe7db",
+      "templateId": "amex_bcp",
+      "name": "Disney Bundle Credit",
+      "amount": 120,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Lifestyle"
+    },
+    {
+      "id": "aaf39c06-a335-42f7-9629-67fe3aa9c2e3",
+      "templateId": "template_capone_venture",
+      "name": "Global Entry/TSA PreCheck",
+      "amount": 120,
+      "allowPartial": 0,
+      "frequency": "Every 4 Years",
+      "resetType": "Custom",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "bf08132d-dadd-4586-b260-30873858536b",
+      "templateId": "template_capone_venture_x",
+      "name": "Travel Credit",
+      "amount": 300,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "52539020-0eee-489a-b9b3-f45aa990dc01",
+      "templateId": "template_capone_venture_x",
+      "name": "Global Entry/TSA PreCheck",
+      "amount": 120,
+      "allowPartial": 0,
+      "frequency": "Every 4 Years",
+      "resetType": "Custom",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "6ca643b0-436c-4248-bae6-d4e9fe593a15",
+      "templateId": "template_capone_venture_x",
+      "name": "Anniversary Bonus",
+      "amount": 100,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Custom",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "6a17fc6b-7173-44ea-b1f1-7ec8b2cb09a4",
+      "templateId": "template_capone_venture_x_business",
+      "name": "Travel Credit",
+      "amount": 300,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "dd52a8ca-4ef9-4a70-bed0-d98d59e77b10",
+      "templateId": "template_capone_venture_x_business",
+      "name": "Anniversary Bonus",
+      "amount": 100,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Custom",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "0bc26cee-29d0-45b4-b375-97bcc952791c",
+      "templateId": "chase_sapphire_preferred",
+      "name": "Chase Travel Hotel Credit",
+      "amount": 50,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "dfc0c248-ee0b-489b-bee9-98afdb18f141",
+      "templateId": "chase_sapphire_reserve",
+      "name": "Annual Travel Credit",
+      "amount": 300,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "a2f401c9-1307-4cd3-a361-e3b3127de7f3",
+      "templateId": "chase_sapphire_reserve",
+      "name": "The Edit℠ Hotel Credit",
+      "amount": 500,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "c345b1cf-7ac6-4d0e-b7e8-d59bee3ff8bc",
+      "templateId": "chase_sapphire_reserve",
+      "name": "Select Hotel Credit",
+      "amount": 250,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "d6bd5ff0-2020-459f-924f-8cc79ea5d897",
+      "templateId": "chase_sapphire_reserve",
+      "name": "Global Entry / TSA PreCheck / NEXUS",
+      "amount": 120,
+      "allowPartial": 0,
+      "frequency": "Every 4 Years",
+      "resetType": "Custom",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "463ba7c3-27c2-46c7-b716-64bdb713d8e9",
+      "templateId": "template_citi_aadvantage_executive",
+      "name": "Grubhub",
+      "amount": 120,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Dining"
+    },
+    {
+      "id": "eca78685-d933-4f8c-a8a8-96e61fcfb9b8",
+      "templateId": "template_citi_aadvantage_executive",
+      "name": "Lyft",
+      "amount": 120,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "General"
+    },
+    {
+      "id": "df0a39ce-6eae-46ac-b98c-731549ddca04",
+      "templateId": "template_citi_aadvantage_executive",
+      "name": "Avis / Budget Car Rentals",
+      "amount": 120,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "General"
+    },
+    {
+      "id": "cad01140-f0fe-4dc2-b025-2dc0dca559a8",
+      "templateId": "template_citi_aadvantage_executive",
+      "name": "Global Entry / TSA PreCheck",
+      "amount": 120,
+      "allowPartial": 0,
+      "frequency": "Every 4 Years",
+      "resetType": "Custom",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "0e6a1056-371e-4704-9206-3401ab34a510",
+      "templateId": "template_citi_strata_premier",
+      "name": "Annual Hotel Savings",
+      "amount": 100,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "25f18f36-5ba5-40e1-9eb1-bb14cc711e41",
+      "templateId": "amex_hilton_aspire",
+      "name": "Hilton Resort Credit",
+      "amount": 400,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "General"
+    },
+    {
+      "id": "203a05f2-497c-403e-84dc-1e8ee33e7e45",
+      "templateId": "amex_hilton_aspire",
+      "name": "Flight Credit",
+      "amount": 200,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "General"
+    },
+    {
+      "id": "24c1ee4d-d7f9-4912-8618-fd56ccf688db",
+      "templateId": "amex_hilton_aspire",
+      "name": "Clear Plus",
+      "amount": 209,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Custom",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "0e45a087-5290-4e3c-9a34-edf43d38c8ee",
+      "templateId": "amex_hilton_aspire",
+      "name": "Waldorf/Conrad Property Credit",
+      "amount": 100,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "General"
+    },
+    {
+      "id": "8d85c2ec-57b3-48cb-89ac-cb522052cf1e",
+      "templateId": "amex_hilton_surpass",
+      "name": "Hilton Credit",
+      "amount": 200,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "General"
+    },
+    {
+      "id": "ba2854f2-e4ac-4d94-8433-6ae8a9bbbb43",
+      "templateId": "marriott_bonvoy_boundless",
+      "name": "Free Night Award",
+      "amount": 0,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "ad992cf2-4ebc-4484-8491-4ddecf43d454",
+      "templateId": "marriott_bonvoy_boundless",
+      "name": "Airline Statement Credit",
+      "amount": 100,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "b3597219-c156-451c-a0e8-38e6df20f2f8",
+      "templateId": "amex_marriott_brilliant",
+      "name": "Dining Credit",
+      "amount": 300,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Dining"
+    },
+    {
+      "id": "2ac971ac-9669-4bba-bc9f-333f3b39c8b4",
+      "templateId": "amex_marriott_brilliant",
+      "name": "Luxury Property Credit",
+      "amount": 100,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "General"
+    },
+    {
+      "id": "3140245e-ba9b-4745-ad2b-a4894cc50d2c",
+      "templateId": "amex_marriott_brilliant",
+      "name": "Global Entry / TSA PreCheck",
+      "amount": 120,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Custom",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "32df8bd7-c33e-4f06-a2ae-a99569894411",
+      "templateId": "united_explorer",
+      "name": "United Hotels Purchases",
+      "amount": 100,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    },
+    {
+      "id": "a6f35480-718c-4903-802a-8e72ebb804d0",
+      "templateId": "united_explorer",
+      "name": "Rideshare Purchases",
+      "amount": 60,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "General"
+    },
+    {
+      "id": "aa0f9b65-2046-412e-92ba-7e785c6ffb4b",
+      "templateId": "united_explorer",
+      "name": "Avis/Budget Rental Car",
+      "amount": 50,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "General"
+    },
+    {
+      "id": "a89cc7d4-9734-4adf-8658-901df0611a82",
+      "templateId": "united_explorer",
+      "name": "JSX Flight Credits",
+      "amount": 100,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "General"
+    },
+    {
+      "id": "a4bfb5d0-fd92-4902-8928-ca730198cd39",
+      "templateId": "united_explorer",
+      "name": "Instacart+ Credits",
+      "amount": 120,
+      "allowPartial": 0,
+      "frequency": "Annual",
+      "resetType": "Calendar",
+      "resetAnchorDate": null,
+      "type": "General"
+    },
+    {
+      "id": "5d3b92de-b85c-48e5-93ac-e690d5c83473",
+      "templateId": "united_explorer",
+      "name": "Global Entry / TSA PreCheck / NEXUS",
+      "amount": 120,
+      "allowPartial": 0,
+      "frequency": "Every 4 Years",
+      "resetType": "Custom",
+      "resetAnchorDate": null,
+      "type": "Travel"
+    }
+  ],
+  "resource_sections": [
+    {
+      "id": "2e8a1e76-56f5-4cb5-9ca4-8662d167f8c1",
+      "name": "Blogs & News",
+      "orderIndex": 0
+    },
+    {
+      "id": "71d1451a-7316-4ecf-ac36-1e0679a3bdeb",
+      "name": "Tools & Apps",
+      "orderIndex": 1
+    }
+  ],
+  "resources": [
+    {
+      "id": "d027cb8a-cf47-40a6-8646-d5c301b62785",
+      "sectionId": "2e8a1e76-56f5-4cb5-9ca4-8662d167f8c1",
+      "name": "Doctor of Credit",
+      "url": "https://www.doctorofcredit.com/",
+      "description": "The premier source for credit card sign-up bonuses, bank account bonuses, and deals.",
+      "orderIndex": 0
+    },
+    {
+      "id": "66a0b26b-0283-400f-b59a-f1ae00a720f6",
+      "sectionId": "2e8a1e76-56f5-4cb5-9ca4-8662d167f8c1",
+      "name": "US Credit Card Guide",
+      "url": "https://www.uscreditcardguide.com/",
+      "description": "Detailed reviews, application rules, and historical high sign-up bonus tracking.",
+      "orderIndex": 1
+    },
+    {
+      "id": "57178079-1f17-4261-8bc1-83ac7e832a32",
+      "sectionId": "2e8a1e76-56f5-4cb5-9ca4-8662d167f8c1",
+      "name": "Frequent Miler",
+      "url": "https://frequentmiler.com/",
+      "description": "Advanced strategies for maximizing points and miles.",
+      "orderIndex": 3
+    },
+    {
+      "id": "3bacf3d5-2a05-4072-9607-cc33fd908a97",
+      "sectionId": "71d1451a-7316-4ecf-ac36-1e0679a3bdeb",
+      "name": "AwardWallet's Merchant Lookup",
+      "url": "https://awardwallet.com/merchants",
+      "description": "Search how a specific merchant codes across different networks.",
+      "orderIndex": 0
+    },
+    {
+      "id": "566a395f-5ebb-43a2-86a0-efcc43b13e33",
+      "sectionId": "71d1451a-7316-4ecf-ac36-1e0679a3bdeb",
+      "name": "CardPointers",
+      "url": "https://cardpointers.com/",
+      "description": "App to help you maximize credit card rewards and track Amex/Chase offers.",
+      "orderIndex": 1
+    },
+    {
+      "id": "1de5f60d-8291-45af-ace1-90def46baf13",
+      "sectionId": "71d1451a-7316-4ecf-ac36-1e0679a3bdeb",
+      "name": "MaxRewards",
+      "url": "https://maxrewards.com/",
+      "description": "Automates activating quarterly categories and adding credit card offers.",
+      "orderIndex": 2
+    },
+    {
+      "id": "1177d161-2166-4670-bf2c-e55896793803",
+      "sectionId": "71d1451a-7316-4ecf-ac36-1e0679a3bdeb",
+      "name": "TravelFreely",
+      "url": "https://travelfreely.com/",
+      "description": "Free app to track 5/24 status and card application timing.",
+      "orderIndex": 3
+    },
+    {
+      "id": "a7defa16-2c3b-4b6d-a5fb-35bf5b5386cc",
+      "sectionId": "2e8a1e76-56f5-4cb5-9ca4-8662d167f8c1",
+      "name": "Miles to Memories",
+      "url": "https://milestomemories.com/",
+      "description": "Travel hacking news, tips, and credit card strategies.",
+      "orderIndex": 4
+    },
+    {
+      "id": "c35ea049-501c-4304-847e-830fd5756cc7",
+      "sectionId": "2e8a1e76-56f5-4cb5-9ca4-8662d167f8c1",
+      "name": "One Mile at a Time",
+      "url": "https://onemileatatime.com/",
+      "description": "Aviation news, airline reviews, and credit card maximizing strategies.",
+      "orderIndex": 5
+    }
+  ]
+}
