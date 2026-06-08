@@ -153,11 +153,11 @@ export default function Dashboard() {
     filteredCards.forEach(card => {
       (card.categories || []).forEach((cat, idx) => {
         let name = cat.categoryName;
-        const isTop = name.startsWith('Top Category');
+        const isTop = name.startsWith('Top Category') || name.startsWith('Highest Eligible');
         const isRotating = name.startsWith('Quarterly Rotating');
         
         if (isTop || isRotating) {
-          const baseName = isTop ? 'Top Category' : 'Quarterly Rotating';
+          const baseName = isTop ? (name.startsWith('Highest Eligible') ? 'Highest Eligible Category' : 'Top Category') : 'Quarterly Rotating';
           let currentValue = name.includes(': ') ? name.split(': ')[1] : '';
 
           if (isRotating && card.quarterlyCategories) {
