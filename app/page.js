@@ -179,7 +179,12 @@ export default function Dashboard() {
             }
           }
           
-          if (!currentValue) return;
+          if (!currentValue) {
+            flex.push({
+              card, catIndex: idx, baseName, currentValue, multiplier: cat.multiplier, isAutomated: false
+            });
+            return;
+          }
 
           processCategory(card, currentValue, cat.multiplier, {
             card, catIndex: idx, baseName, currentValue, multiplier: cat.multiplier, isAutomated: false
